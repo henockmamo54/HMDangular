@@ -276,5 +276,121 @@ green 49A145--
 /*    -webkit-box-shadow: inset 0 0 30px #FB9200;; */
 }
 
+ <!------     test  tabstrip----------------->
+    
+    #custom-tabstrip,
+    #tabstrip-appearance-header .km-navbar,
+    #custom-tabstrip .km-state-active .km-icon,
+    #tabstrip-appearance-header .km-navbar .km-button
+    {
+        background-color: #228b22;
+    }
+
+    #custom-tabstrip,
+    #custom-tabstrip .km-button
+    {
+        background: url(../content/shared/images/patterns/pattern3.png);
+    }
+
+	#tabstrip-appearance-header .km-navbar
+    {
+        background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.5)), color-stop(0.06, rgba(255, 255, 255, 0.45)), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(1, rgba(100, 100, 100, 0))), url(../content/shared/images/patterns/pattern4.png);
+        background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.45) 6%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(100, 100, 100, 0)), url(../content/shared/images/patterns/pattern4.png);
+	}
+
+    #tabstrip-appearance-header .km-navbar .km-button
+    {
+        background-color: rgba(131,81,42,.4);
+    }
+
+	#tabstrip-appearance-header .km-navbar .km-view-title,
+	#tabstrip-appearance-header .km-navbar .km-text
+	{
+        color: #83512a;
+        text-shadow: 0 1px 0 #fff;
+	}
+
+    #custom-tabstrip .km-text,
+    #custom-tabstrip .km-icon
+    {
+    	color: #d9be8c;
+    }
+
+    #custom-tabstrip .km-state-active .km-text,
+    #custom-tabstrip .km-state-active .km-icon
+    {
+    	color: #62cb62;
+        background-color: transparent;
+    }
+
+    .km-ios #tabstrip-gallery .km-listview .km-list,
+    .km-ios #tabstrip-cities .km-listview .km-list,
+    .km-ios #tabstrip-favourites .km-listview .km-list
+    {
+    	border: none;
+    }
+
+    .km-ios #custom-tabstrip .km-button:active,
+    .km-ios #custom-tabstrip .km-state-active {
+    	box-shadow: inset 0 0 20px #230e04;
+    }
+
+    #tabstrip-gallery .km-insetcontent,
+    #tabstrip-cities .km-insetcontent,
+    #tabstrip-favourites .km-insetcontent
+    {
+        color: #000;
+        background: url(../content/shared/images/patterns/pattern4.png);
+    }
+
+    #custom-tabstrip .km-state-active
+    {
+        background-color: transparent;
+    }
+
+    #tabstrip-gallery h2 {
+        display: inline-block;
+        font-size: 1.1em;
+        margin: 1em 0 1.5em 1em;
+    }
+
+    #tabstrip-gallery img {
+	    float: left;
+        width: 4em;
+        height: 4em;
+        margin: 0;
+        -webkit-box-shadow: 0 1px 3px #333;
+        box-shadow: 0 1px 3px #333;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+    }
+
+<!--   test ---------------------------- -->
+<!---- Ribbon CSS --->
+
+.triangle
+  {
+    width:0px;
+    height:0px;
+    border-top: 170px solid #000;
+    border-left: 170px solid transparent;
+  }
+.foldtl {
+    position: relative;
+
+  }
+
+  .foldtl:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-top: 70px solid yellow;
+    border-right: 70px solid transparent;
+  }
+
+
 
    
