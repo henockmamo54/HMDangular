@@ -59,14 +59,14 @@ and this isnt documented anywhere :( -->
    
       <script type="text/x-kendo-template" id="itemissue-template">
        
-        <a href="views/IssueDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode #& #: ItemCTSH # -  #: UnitSH # SOH: #: SOH #">
+        <a href="views/IssueDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode #& #: ItemCTSH # -  #: UnitSH # SOH: #:accounting.formatNumber(SOH) #">
             <div class="row1">
                 <div class="col1"> 
-                   <div><b> Issue </b>- <label class="medium_text">YTD: #: accounting.formatNumber(AmountYTD) # </label> </div>
+                   <div><b> Issue </b>- <label class="medium_text"> <b>YTD: #: accounting.formatNumber(AmountYTD) # </b></label> </div>
                  </div>                   
             <div class="medium_text">  Last Issue: #: getRelativeDateFromNow( MostRecentDate) # </div> 
             <div class="medium_text">  Last Quantity: #: accounting.formatNumber(MostRecentQuantityIssued) #   </div> 
-             <div class="medium_text"> TO: #: Institution #</div>
+             <div class="medium_text"> To: #: Institution #</div>
            
             </div>
         </a>
@@ -74,11 +74,11 @@ and this isnt documented anywhere :( -->
     
      <script type="text/x-kendo-template" id="itemreceipt-template">
        
-        <a href="views/ReceiptDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH # - #: UnitSH # SOH: #: SOH #">
+        <a href="views/ReceiptDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH # - #: UnitSH # SOH: #:accounting.formatNumber(SOH) #">
             <div class="row1">
                
                 <div class="col1">
-                    <div><b> Receipt </b>-<label class="medium_text "> YTD: #: accounting.formatNumber(AmountYTD) # </label></div>
+                    <div><b> Receipt </b>-<label class="medium_text "> <b> YTD: #: accounting.formatNumber(AmountYTD) # </b> </label></div>
                 </div>
             <div class="medium_text">  Last Receive: #: getRelativeDateFromNow( MostRecentDate) # </div> 
             <div class="medium_text">  Last Quantity: #: accounting.formatNumber(MostRecentQuantityReceived)# </div>
@@ -122,7 +122,7 @@ and this isnt documented anywhere :( -->
                 <div class="col1">
                     <div><b> Pipeline </b> </div>  </br>                 
                 </div>
-               <div class="medium_text">Requested: #: accounting.formatNumber(Request) #Approved: #: accounting.formatNumber(Approved) # In Transit: #: accounting.formatNumber(Git) #    </div>
+               <div class="medium_text">Requested: #: accounting.formatNumber(Request) # | Approved: #: accounting.formatNumber(Approved) # | In Transit: #: accounting.formatNumber(Git) #    </div>
              </div>
       
     </script> 
