@@ -59,7 +59,7 @@ and this isnt documented anywhere :( -->
    
       <script type="text/x-kendo-template" id="itemissue-template">
        
-        <a href="views/IssueDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode #& #: ItemCTSH #">
+        <a href="views/IssueDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode #& #: ItemCTSH #[ #: UnitSH #] [#: SOH #]">
             <div class="row1">
                 <div class="col1"> 
                    <div><b> Issue </b>- <label class="medium_text">YTD: #: accounting.formatNumber(AmountYTD) # </label> </div>
@@ -74,7 +74,7 @@ and this isnt documented anywhere :( -->
     
      <script type="text/x-kendo-template" id="itemreceipt-template">
        
-        <a href="views/ReceiptDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH #">
+        <a href="views/ReceiptDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH # [ #: UnitSH #] [#: SOH #]">
             <div class="row1">
                
                 <div class="col1">
@@ -122,9 +122,8 @@ and this isnt documented anywhere :( -->
                 <div class="col1">
                     <div><b> Pipeline </b> </div>  </br>                 
                 </div>
-               <div class="medium_text">Requested: #: accounting.formatNumber(Request) #  </div></br>
-               <div class="medium_text">Approved: #: accounting.formatNumber(Approved) # </div> </br>
-               <div class="medium_text">In Transit: #: accounting.formatNumber(Git) # </div> </br>
+               <div class="medium_text">Requested: #: accounting.formatNumber(Request) #Approved: #: accounting.formatNumber(Approved) # In Transit: #: accounting.formatNumber(Git) #    </div></br>
+               
     
             </div>
       
