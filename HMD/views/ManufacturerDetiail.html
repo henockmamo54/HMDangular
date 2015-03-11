@@ -1,0 +1,27 @@
+
+<div data-role="view" data-title="Manufacturer" data-show="ManufacturerDetail.show" data-hide="ManufacturerDetail.hide" data-reload="true" data-layout="back-layout">
+   <div class="header header_desc" id="header_desc_ManufacturerDetail">
+   </div>
+    
+   <ul id="theul" data-role="listview"  data-source="ManufacturerDetail.data" data-pull-to-refresh="true" data-template="ManufacturerDetail-template">
+   </ul> 
+    
+</div>
+
+ <script type="text/x-kendo-template" id="ManufacturerDetail-template">           
+       
+           <div class="row1">
+                
+                <div class="col1">
+                    <div><b>#: ManufacturerSH # - #:CountryOfOrigin # </b></div>  </br>
+                </div>
+                
+                <div class="medium_text"> #:accounting.formatMoney(Amount,"ETB ",0)# </div>
+               
+            </div>
+       
+         
+    </script>
+
+
+   

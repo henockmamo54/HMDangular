@@ -1,0 +1,29 @@
+
+
+<div data-role="view" data-title="Stock by Hub" data-show="SohByEnvironment.show" data-hide="SohByEnvironment.hide" data-reload="true" data-layout="back-layout">
+   <div class="header header_desc" id="header_desc_SohByEnvironment" >
+       
+    </div>
+    
+    <ul id="theul" data-role="listview"  data-source="SohByEnvironment.data" data-pull-to-refresh="true" data-template="SohByEnvironment-template">
+        </ul>
+    
+</div>
+
+ <script type="text/x-kendo-template" id="SohByEnvironment-template">           
+       <a href="views/ItemDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH #">
+            <div class="row1">
+                <div class="col1">
+                    <div><b>#: Environment #</b></div>  
+                </div>
+                <div class="medium_text"> <label class="right "> SOH: #:accounting.formatNumber(SOH) # </label> </div> 
+                <div class="medium_text" >Ordered: 00 | In Transit: 00  </div>
+                 <div class="medium_text"> MOS: #: accounting.formatNumber(MOS,1,",") # AMC: #: accounting.formatNumber(AMC,1,",") # MIN: #: accounting.formatNumber(Min)# MAX: #: accounting.formatNumber(Max)#</div>
+               
+            </div>
+       </a>
+         
+    </script>
+
+
+   

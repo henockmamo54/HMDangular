@@ -1,0 +1,369 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,900,700italic,900italic);
+
+
+
+<!-- color choice guidelines -->
+<!--- Exess: Orange  #E78A1F -->
+<!-- Normal: green #49A145 -->
+<!-- Below min : blue  #4DB3D6   --> 
+<!-- Stocked out: Red  #CE3C3E -->
+
+* { font-family: 'Roboto', sans-serif; line-height:1.2; vertical-align:middle; }
+
+
+#header_desc{
+    text-align:center;
+    font-weight:400;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+.header_desc{
+    text-align:center;
+    font-weight:400;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+      
+      
+      
+<!-- progress bar  css -->
+
+
+
+
+ .progress {
+  background-color: #f9f9f9;
+  color: #fff;
+  box-shadow: inset 0 1px 1px rgba(100, 100, 100, 0.1);
+  box-sizing: initial;
+  color: #fff;
+  font-size: 11px;
+  font-size: 0.6875rem;
+  height: 12px;
+  line-height: 1.182;
+  margin: 6px 0;
+  position: relative;
+  text-align: center;
+  width: 100%;        
+  
+}
+#progressbarcontainer{
+    height:7px;
+    background-color:grey;
+    width:100%;
+    margin-right:3px;
+}
+
+#progressbarcontainer2{
+    height:7px;
+    background-color:transparent;
+    width:100%;
+    margin-right:3px;
+}
+.progress-small {
+  font-size: 9px;
+  font-size: 0.5625rem;
+  height: 6px;
+  line-height: 0.875;
+}
+
+.progress-large {
+  font-size: 16px;
+  font-size: 1rem;
+  height: 25px;
+  line-height: 1.7;
+}
+
+.progress > span {
+  background-color: #2bc253;
+  display: block;
+  height: 100%;
+  width: 0px;
+  position: relative;
+  overflow: hidden;
+ 
+}
+.progress.progress-stacked > span {
+  display: inline-block;
+  float: left;
+}
+
+<!-- color choice guidelines -->
+<!--- Exess: Orange  #E78A1F -->
+<!-- Normal: green #49A145 -->
+<!-- Below min : blue  #4DB3D6   --> 
+<!-- Stocked out: Red  #CE3C3E -->
+
+/*
+#Excess
+{
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  width:40%;
+}
+
+ #Normal
+      {
+          width:0%;
+      }
+ #BelowMin
+      {
+          width:10%;
+      }
+#StockedOut
+{
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  width:25%;
+}
+*/
+
+
+.stockedout-bg-red{
+   border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  width:25%;
+  background-color:#CE3C3E!important;
+  font-size:3px;
+}
+.belowmin-bg-blue{
+     width:10%; 
+  background-color:#4DB3D6!important;
+  font-size:3px;
+}
+.excess-bg-orange
+{ 
+    border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  width:40%;
+  background-color:#E78A1F!important;
+  font-size:3px;
+}
+.normal-bg-green
+{
+    width:0%;
+  background-color:#49A145!important;
+      font-size:3px;
+}
+      
+  /*red--CE3C3E
+blue--4DB3D6
+orange--E78A1F
+green 49A145--
+*/
+
+.row1{
+    width:100%;
+    padding-bottom:2px;
+    
+}
+
+
+.Excess:before
+{
+    border-top: 15px solid #E78A1F;
+}
+
+
+.Normal:before
+{   
+    border-top: 15px solid #49A145;
+
+}
+
+.BelowMin:before
+{   
+    border-top: 15px solid #4DB3D6;
+
+}
+
+.StockedOut:before 
+{  
+    border-top: 15px solid #CE3C3E;
+}
+.StockedOut, .BelowMin , .Normal ,.Excess {    
+    padding:0px;
+    position:relative;
+}
+
+.StockedOut:before, .BelowMin:before , .Normal:before , .Excess:before
+{
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 0px;
+    height: 0px;
+   border-left: 15px solid transparent;
+}
+
+.row2
+      {
+         width:100; 
+      }
+.col1{
+    width: 100%;
+    float:left;
+}
+
+.col2{
+    width: 33.33%;
+    float:right;
+    vertical-align:bottom;
+}
+.smaller_text,.col2{    
+
+    font-size:9px;
+}
+
+.medium_text{    
+
+    font-size:12px;
+}
+
+.large_text{    
+
+    font-size:16px;
+}
+
+
+#min-max::before{
+    content: "efg";
+      position: absolute;      
+      top: =10px;
+      left: 1;  
+    
+      transform: translateX(-50%);
+      border-top: 5px solid #525961;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;   
+  
+}
+.right {
+    position:relative;
+    float:right; 
+    padding-right:25px;
+}
+
+/*
+.min-max::after{
+       content: "abc";
+      position: absolute;
+      right: 58%; 
+      top: 30%;     
+      color: #fff;
+      font-size: 13px;
+      font-weight: 50;
+      background-color: orange;      
+      border-top: 5px solid #525961;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+   
+}*/
+
+
+.blueBackground{
+    background-color: #87D2EE;
+     box-shadow: inset 0 0 100px #87D2EE;
+/*     box-shadow: inset 0 0 30px #87D2EE; */
+   /*-webkit-box-shadow: inset 0 0 30px #87D2EE;*/
+}
+.button_Background{
+    background-color: #FFAA2A;;
+    box-shadow: inset 0 0 100px #FFAA2A;
+    /*box-shadow: inset 0 0 30px #FB9200;*/
+/*    -webkit-box-shadow: inset 0 0 30px #FB9200;; */
+}
+
+
+    <!------     test  tabstrip----------------->
+    
+    #custom-tabstrip,
+    #tabstrip-appearance-header .km-navbar,
+    #custom-tabstrip .km-state-active .km-icon,
+    #tabstrip-appearance-header .km-navbar .km-button
+    {
+        background-color: #228b22;
+    }
+
+    #custom-tabstrip,
+    #custom-tabstrip .km-button
+    {
+        background: url(../content/shared/images/patterns/pattern3.png);
+    }
+
+	#tabstrip-appearance-header .km-navbar
+    {
+        background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.5)), color-stop(0.06, rgba(255, 255, 255, 0.45)), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(1, rgba(100, 100, 100, 0))), url(../content/shared/images/patterns/pattern4.png);
+        background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.45) 6%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(100, 100, 100, 0)), url(../content/shared/images/patterns/pattern4.png);
+	}
+
+    #tabstrip-appearance-header .km-navbar .km-button
+    {
+        background-color: rgba(131,81,42,.4);
+    }
+
+	#tabstrip-appearance-header .km-navbar .km-view-title,
+	#tabstrip-appearance-header .km-navbar .km-text
+	{
+        color: #83512a;
+        text-shadow: 0 1px 0 #fff;
+	}
+
+    #custom-tabstrip .km-text,
+    #custom-tabstrip .km-icon
+    {
+    	color: #d9be8c;
+    }
+
+    #custom-tabstrip .km-state-active .km-text,
+    #custom-tabstrip .km-state-active .km-icon
+    {
+    	color: #62cb62;
+        background-color: transparent;
+    }
+
+    .km-ios #tabstrip-gallery .km-listview .km-list,
+    .km-ios #tabstrip-cities .km-listview .km-list,
+    .km-ios #tabstrip-favourites .km-listview .km-list
+    {
+    	border: none;
+    }
+
+    .km-ios #custom-tabstrip .km-button:active,
+    .km-ios #custom-tabstrip .km-state-active {
+    	box-shadow: inset 0 0 20px #230e04;
+    }
+
+    #tabstrip-gallery .km-insetcontent,
+    #tabstrip-cities .km-insetcontent,
+    #tabstrip-favourites .km-insetcontent
+    {
+        color: #000;
+        background: url(../content/shared/images/patterns/pattern4.png);
+    }
+
+    #custom-tabstrip .km-state-active
+    {
+        background-color: transparent;
+    }
+
+    #tabstrip-gallery h2 {
+        display: inline-block;
+        font-size: 1.1em;
+        margin: 1em 0 1.5em 1em;
+    }
+
+    #tabstrip-gallery img {
+	    float: left;
+        width: 4em;
+        height: 4em;
+        margin: 0;
+        -webkit-box-shadow: 0 1px 3px #333;
+        box-shadow: 0 1px 3px #333;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+    }
+
+<!--   test ---------------------------- -->

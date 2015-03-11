@@ -1,0 +1,33 @@
+<div data-role="view"  data-title="Issue Detail List" data-show="IssueList.show" data-hide="IssueList.hide" data-reload="true" data-layout="back-layout" >
+    <div class="header" id="header_desc">
+    </div>
+     <ul id="theul" data-role="listview"  data-source="IssueList.data" data-pull-to-refresh="true" data-template="issueList-template">
+     <li>
+        
+      </li>
+         
+    </ul>
+</div>
+
+<!-- templates-->
+<!-- filter datasource from previous -->
+<!-- how to pass multpile parameters -->
+<script type="text/x-kendo-template" id="issueList-template">
+ 
+        
+            <div class="row1">
+                <div class="col1">
+                    <div>#: ItemCTSH #</div>
+                   <div class="medium_text"> SOH: #:accounting.formatNumber(SOH) # MOS: #: accounting.formatNumber(MOS,1,",") # AMC: #: accounting.formatNumber(AMC,1,",") #  </div>
+                   <div class="medium_text"> MIN: #: accounting.formatNumber(MIN)# MAX: #: accounting.formatNumber(MAX)#</div>
+                  <!--  <br/>
+                    <div id="progressbarcontainer" class="progress progress-stacked">                        
+                        <span id="min-max" class="bg-orange" #= "style=width:" + ($("body").width() - 70)* (0.5) + "px" # ></span>
+                        <span id="StockStatus" class="bg-green" #= "style=width:" + ($("body").width() - 70) * (1) + "px" # ></span>
+                    </div> -->
+                    
+                </div>
+            </div>
+       
+
+</script>
