@@ -62,11 +62,11 @@ and this isnt documented anywhere :( -->
         <a href="views/IssueDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode #& #: ItemCTSH #">
             <div class="row1">
                 <div class="col1"> 
-                   <div><b> Issue </b> </div>
+                   <div><b> Issue </b>- <label class="medium_text">YTD: #: accounting.formatNumber(AmountYTD) # </label> </div>
                  </div>                   
             <div class="medium_text">  Last Issue: #: getRelativeDateFromNow( MostRecentDate) # </div> 
-            <div class="medium_text">  Last Quantity: #: MostRecentQuantityIssued # <label class="right "> YTD: #: accounting.formatNumber(AmountYTD) # </label> </div> 
-             <div class="medium_text"> #: Institution #</div>
+            <div class="medium_text">  Last Quantity: #: accounting.formatNumber(MostRecentQuantityIssued) #   </div> 
+             <div class="medium_text"> TO: #: Institution #</div>
            
             </div>
         </a>
@@ -78,11 +78,11 @@ and this isnt documented anywhere :( -->
             <div class="row1">
                
                 <div class="col1">
-                    <div><b> Receipt </b></div>
+                    <div><b> Receipt </b>-<label class="medium_text "> YTD: #: accounting.formatNumber(AmountYTD) # </label></div>
                 </div>
             <div class="medium_text">  Last Receive: #: getRelativeDateFromNow( MostRecentDate) # </div> 
-            <div class="medium_text">  Last Quantity: #: MostRecentQuantityReceived # <label class="right "> YTD: #: accounting.formatNumber(AmountYTD) # </label></div>
-            <div class="medium_text">  #: SupplierSH #</div>
+            <div class="medium_text">  Last Quantity: #: accounting.formatNumber(MostRecentQuantityReceived)# </div>
+            <div class="medium_text">  From: #: SupplierSH #</div>
             </div>
         </a>
     </script>
@@ -122,7 +122,9 @@ and this isnt documented anywhere :( -->
                 <div class="col1">
                     <div><b> Pipeline </b> </div>  </br>                 
                 </div>
-               <div class="medium_text">Request: #: accounting.formatNumber(Request) # Approved: #: accounting.formatNumber(Approved) # In Transit: #: accounting.formatNumber(Git) # </div>
+               <div class="medium_text">Requested: #: accounting.formatNumber(Request) #  </div></br>
+               <div class="medium_text">Approved: #: accounting.formatNumber(Approved) # </div> </br>
+               <div class="medium_text">In Transit: #: accounting.formatNumber(Git) # </div> </br>
     
             </div>
       
