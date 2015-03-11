@@ -1,27 +1,38 @@
- 
-<!---- Ribbon CSS --->
 
-.triangle
-  {
-    width:0px;
-    height:0px;
-    border-top: 170px solid #000;
-    border-left: 170px solid transparent;
-  }
-.foldtl {
-    position: relative;
+.Excess:before
+{
+    border-top: 15px solid #E78A1F;
+}
 
-  }
 
-  .foldtl:before {
+.Normal:before
+{   
+    border-top: 15px solid #49A145;
+
+}
+
+.BelowMin:before
+{   
+    border-top: 15px solid #4DB3D6;
+
+}
+
+.StockedOut:before 
+{  
+    border-top: 15px solid #CE3C3E;
+}
+.StockedOut, .BelowMin , .Normal ,.Excess {    
+    padding:0px;
+    position:relative;
+}
+
+.StockedOut:before, .BelowMin:before , .Normal:before , .Excess:before
+{
     content: "";
     position: absolute;
     top: 0%;
-    left: 0%;
+    right: 0%;
     width: 0px;
     height: 0px;
-    border-top: 70px solid yellow;
-    border-right: 70px solid transparent;
-  }
-
-<!----- Ribbon Css -->
+   border-left: 15px solid transparent;
+}
