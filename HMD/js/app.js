@@ -35,7 +35,8 @@
         app = new kendo.mobile.Application(document.body, {
             layout: "master-layout",
             skin: "flat",
-            transition: "slide"
+            transition: "slide",
+            //initial:"splash"
         });
 
     }, false);
