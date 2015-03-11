@@ -1,9 +1,27 @@
-<!DOCTYPE html>
+ 
+<!---- Ribbon CSS --->
 
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-    </body>
-</html>
+.triangle
+  {
+    width:0px;
+    height:0px;
+    border-top: 170px solid #000;
+    border-left: 170px solid transparent;
+  }
+.foldtl {
+    position: relative;
+
+  }
+
+  .foldtl:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-top: 70px solid yellow;
+    border-right: 70px solid transparent;
+  }
+
+<!----- Ribbon Css -->
