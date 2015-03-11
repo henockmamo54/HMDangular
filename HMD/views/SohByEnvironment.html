@@ -12,7 +12,7 @@
 
  <script type="text/x-kendo-template" id="SohByEnvironment-template">           
        <a href="views/ItemDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH #" class="#= SS #">
-            <span class="sstatus">#: SS.substr(0,1) #</span>
+            <span class="sstatus"># if(SS!=null) {# #:SS.substr(0,1)# #} #</span>
             <div class="row1">
                 <div class="col1">
                     <div><b>#: Environment #</b></div>  
