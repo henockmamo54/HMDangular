@@ -1,35 +1,54 @@
- <!------     test  tabstrip----------------->
-    
-   #tabstrip-profile h2 {
-        display: inline-block;
-        font-size: 1.1em;
-        margin: 1.5em 0 0 .7em;
-    }
-    #tabstrip-profile h2 span {
-        display: block;
-        clear: both;
-        font-size: 1.8em;
-        margin: .1em 0 0 0;
-    }
-    #tabstrip-profile img {
-        width: 5em;
-        height: 5em;
-        float: left;
-        margin: 1em;
-        border: 1px solid rgba(0,0,0,.2);
-        -webkit-border-radius: 4em;
-        border-radius: 4em;
-    }
-
-    .sales-down,
-    .sales-hold,
-    .sales-up,
-    .value {
-        float: right;
-    }
-    .sales-up { color: green; }
-    .sales-down { color: red; }
-    .sales-hold { color: blue; }
-    .value { color: #bbb; }
-
-<!--   test ---------------------------- -->
+.km-ios7 .km-view .km-tabstrip .km-button {
+    background-color: rgb(229, 229, 229);
+}
+.km-ios7 .km-view .km-tabstrip .km-state-active span.km-icon {
+    color: rgb(0, 163, 199);
+}
+.km-ios7 .km-view .km-tabstrip .km-button .km-icon {
+    color: rgb(153, 153, 153);
+}
+.km-ios .km-view .km-tabstrip .km-button {
+    background-color: rgb(229, 229, 229);
+}
+.km-ios .km-view .km-tabstrip .km-state-active span.km-icon {
+    color: rgb(0, 163, 199);
+}
+.km-ios .km-view .km-tabstrip .km-button .km-icon {
+    color: rgb(153, 153, 153);
+}
+.km-android .km-view .km-tabstrip .km-button {
+    background-color: rgb(229, 229, 229);
+}
+.km-android .km-view .km-tabstrip .km-state-active span.km-icon {
+    color: rgb(0, 163, 199);
+}
+.km-android .km-view .km-tabstrip .km-button .km-icon {
+    color: rgb(153, 153, 153);
+}
+.km-blackberry .km-view .km-tabstrip .km-button {
+    background-color: rgb(229, 229, 229);
+}
+.km-blackberry .km-view .km-tabstrip .km-state-active span.km-icon {
+    color: rgb(0, 163, 199);
+}
+.km-blackberry .km-view .km-tabstrip .km-button .km-icon {
+    color: rgb(153, 153, 153);
+}
+.km-wp .km-view .km-tabstrip .km-button {
+    background-color: rgb(229, 229, 229);
+}
+.km-wp .km-view .km-tabstrip .km-state-active span.km-icon {
+    color: rgb(0, 163, 199);
+}
+.km-wp .km-view .km-tabstrip .km-button .km-icon {
+    color: rgb(153, 153, 153);
+}
+.km-flat .km-view .km-tabstrip .km-button {
+    background-color: rgb(229, 229, 229);
+}
+.km-flat .km-view .km-tabstrip .km-state-active span.km-icon {
+    color: rgb(0, 163, 199);
+}
+.km-flat .km-view .km-tabstrip .km-button .km-icon {
+    color: rgb(153, 153, 153);
+}
