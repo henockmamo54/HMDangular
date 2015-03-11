@@ -32,8 +32,8 @@
                     selectedProgramDesc = location.substring(location.lastIndexOf('&')+1, location.length);
 
                     document.getElementById("header_desc").innerHTML = selectedProgramDesc +" Items";    
-                var data = this.data();                
-                var parentWidth = $(document).width();   
+                   var data = this.data();                
+                  var parentWidth = $(document).width();   
                
                        
             },
@@ -42,8 +42,7 @@
             }           
         }),
                
-            show: function (){    
-              
+            show: function (){                  
               Items.data.read();
                 },
                 back: function () {
