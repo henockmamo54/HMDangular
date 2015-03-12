@@ -31,7 +31,7 @@
     };
 
     document.addEventListener("deviceready", function () {
-        navigator.splashscreen.hide();
+       // navigator.splashscreen.hide();
 
         app = new kendo.mobile.Application(document.body, {
             layout: "master-layout",

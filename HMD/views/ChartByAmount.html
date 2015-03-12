@@ -1,19 +1,64 @@
+<!DOCTYPE html>
 <div data-role="view" data-title="Chart by Amount" data-reload="true" data-layout="master-layout">
     <div class="header" id="header_desc">
-        
+       
     </div>
-    <div id="chart"></div>
- <script>
-     
-  $( document ).ready(function() {
-   var chart = c3.generate({
-    data: {
-        columns: [
-            ['data1', 100, 200, 150, 300, 200],
-            ['data2', 400, 500, 250, 700, 300],
-        ]
-    }
+ <!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+</style>
+
+<svg class="chart"></svg>
+<script>
+
+var width = 400,
+    barHeight = 20 ;
+
+var x = d3.scale.linear()
+    .range([0, width]);
+
+var chart = d3.select(".chart")
+    .attr("width", width);
+
+
+
+d3.json("http://webapi.dashboard.hcmisonline.org:80/api/PR_WebApi/Get",function(error, data) {
+  x.domain([0, d3.max(data.Data,function(d) { return d.TotalValue ; })]);
+
+  chart.attr("height", barHeight * data.Data.length);
+
+// this will stack the bars vertically starting from 0,0 which means top
+  var bar = chart.selectAll("g")
+      .data(data.Data)
+      .enter().append("g")
+      .attr("transform", function(d, i) {return "translate(0," + i * barHeight + ")"; });
+
+
+  bar.append("rect")
+      .attr("width", function(d) { return x(d.TotalValue);})
+      .attr("height", barHeight - 1);
+
+  bar.append("text")
+      .attr("x", function(d) { return (x(d.TotalValue) - 3); })
+      .attr("y", barHeight / 2)
+      .attr("dy", ".35em")
+      .text(function(d) { console.log("text is" + d.TotalValue); return d.TotalValue; });
 });
-});
-  
- </script>
+
+function type(d) {
+  d.value = +d.Data.TotalValue; // coerce to number
+  return d;
+}
+
+</script>
