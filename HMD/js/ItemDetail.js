@@ -37,8 +37,12 @@
                    
                  selectedItemCTSH = location.substring(location.lastIndexOf('&')+1 , location.length);
                 
-                 document.getElementById("header_desc_ItemDetail").innerHTML = selectedItemCTSH; 
-                  // var ItemDetailMainDiv=   document.getElementById("ItemDetailMainDiv");
+                 var selecttedItemUnit=selectedItemCTSH.substring(0,selectedItemCTSH.indexOf("SOH"));
+                var SOH=selectedItemCTSH.substring(selectedItemCTSH.indexOf("SOH"),selectedItemCTSH.length);
+               
+                document.getElementById("header_desc_ItemDetail").innerHTML = selecttedItemUnit + "</br> "+SOH ;
+                    
+                    // var ItemDetailMainDiv=   document.getElementById("ItemDetailMainDiv");
                   //   ItemDetailMainDiv["data-title"] = 'environment';
                  // $("#ItemDetailMainDiv").attr("data-title","environment");
                  //     $("#ItemDetailMainDiv").text("environment");

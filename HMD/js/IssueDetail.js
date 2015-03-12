@@ -24,7 +24,10 @@
                 
                  selectedItemCTSH = location.substring(location.lastIndexOf('&')+1 , location.length);
                 
-                document.getElementById("header_desc_IssueDetail").innerHTML = selectedItemCTSH; 
+                 var selecttedItemUnit=selectedItemCTSH.substring(0,selectedItemCTSH.indexOf("SOH"));
+                var SOH=selectedItemCTSH.substring(selectedItemCTSH.indexOf("SOH"),selectedItemCTSH.length);
+               
+                document.getElementById("header_desc_IssueDetail").innerHTML = selecttedItemUnit + "</br> "+SOH ;
                  
                      
                 var data = this.data();                
