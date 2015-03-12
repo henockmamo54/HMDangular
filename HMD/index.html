@@ -47,11 +47,11 @@
             </div>
         </div>
          <div data-role="footer">
-        <div data-role="tabstrip" id="custom-tabstrip" class="gray_background">
+        <div data-role="tabstrip" id="custom-tabstrip"  class="gray_background">
             <a href="#" data-icon="contacts">test 1 
             </a><a href="#" data-icon="history">test 2
             </a><a href="#" data-icon="favorites">test 3
-            </a><a href="#" data-icon="settings">test 4</a>
+            </a><a href="#" data-icon="about">test 4</a>
         </div>
     </div>
     </div>
@@ -64,11 +64,11 @@
             </div>
         </div>
          <div data-role="footer">
-                    <div data-role="tabstrip" id="custom-tabstrip" class="gray_background">
-            <a href="#" data-icon="contacts">test 1 
-            </a><a href="#" data-icon="history">test 2
-            </a><a href="#" data-icon="favorites">test 3
-            </a><a href="#" data-icon="settings">test 4</a>
+                    <div data-role="tabstrip" id="custom-tabstrip" class="gray_background" >
+            <a  id="tab1" href="" data-icon="contacts">test 1 
+            </a><a id="tab2" href="" data-icon="history">test 2
+            </a><a id="tab3" href="" data-icon="favorites">test 3
+            </a><a id="tab4" href="#" data-icon="settings">test 4</a>
         </div>
          </div>
     </div>
@@ -125,7 +125,7 @@
 
     <script type="text/x-kendo-template" id="categories-template">
         #console.log($("body").width() - 70);#
-        <a href="views/ItemList.html?ProgramID=#: ProgramID # & #: ProgramName #">
+        <a href="views/ItemList.html?ProgramID=#: ProgramID #& #: ProgramName #">
             <div class="row1">
                 <div class="col1">
                     <div><b>#: ProgramName #</b> - #: Descripton # </div>  

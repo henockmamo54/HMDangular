@@ -16,6 +16,14 @@
                  read: {
                     url: function(){ console.log("on read method");
                                     var location = window.location.toString();
+                                    var test=location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                                    var Soh="views/ItemList.html"+test+"&OrderBy=SOH+Desc&"+location.substring(location.lastIndexOf('&')+1, location.length);
+                                    var MOS="views/ItemList.html"+test+"&OrderBy=MOS+Desc&"+location.substring(location.lastIndexOf('&')+1, location.length);
+                                    var SS="views/ItemList.html"+test+"&OrderBy=SS+Desc&"+location.substring(location.lastIndexOf('&')+1, location.length);
+                                    $("#tab1").attr("href",MOS);
+                                     $("#tab2").attr("href",Soh);
+                                     $("#tab3").attr("href",SS);
+                                    console.log("on read method   ==> "+location );
                         return "http://webapi.dashboard.hcmisonline.org:80/api/IPVI_WebApi/ItemUnitListByProgram"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))},
                     type: "get",
                     dataType: "json"
@@ -44,10 +52,20 @@
                
             show: function (){                  
               Items.data.read();
+                $("tab1").attr("href","test");
                 },
                 back: function () {
                     app.navigate("#:back");
+                    Items.data.read();
                 },
+             test : function(){
+                 // console.log("test");
+                 //  // var tabStrip = $("#custom-tabstrip").data.select();
+                 //  //  console.log(tabStrip);
+                 // var tabStrip = $("#custom-tabstrip").kendoTabStrip().data("kendoTabStrip");
+                 // console.log(tabStrip.items());
+             },
+              
                 hide: function () {/*TODO: free resources here*/ console.log('hide called');},  
                
     };

@@ -25,7 +25,8 @@
             app.navigate("#:back");
         },
         settings: function () {},        
-        show: function(){console.log("showing");}
+        show: function(){console.log("showing")},
+        tab: function(){console.log('we');}
 
     };
 
