@@ -4,6 +4,7 @@
    <div class="header header_desc" id="header_desc_SohByEnvironment" >
        
     </div>
+   
     
     <ul id="theul" data-role="listview"  data-source="SohByEnvironment.data" data-pull-to-refresh="true" data-template="SohByEnvironment-template">
         </ul>
@@ -11,8 +12,7 @@
 </div>
 
  <script type="text/x-kendo-template" id="SohByEnvironment-template">           
-       <a href="views/ItemDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH #" class="#= SS #">
-            <span class="sstatus"># if(SS!=null) {# #:SS.substr(0,1)# #} #</span>
+       <a href="views/ItemDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH # - #: UnitSH # SOH: #:accounting.formatNumber(SOH) #">
             <div class="row1">
                 <div class="col1">
                     <div><b>#: Environment #</b></div>  

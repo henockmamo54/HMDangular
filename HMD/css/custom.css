@@ -239,6 +239,13 @@ green 49A145--
 /*    -webkit-box-shadow: inset 0 0 30px #FB9200;; */
 }
 
+.Lightgray_background
+{
+     background-color: #F4F4F4;;
+    box-shadow: inset 0 0 100px #F4F4F4;   
+}
+
+<!-- test -->
 
 
 
