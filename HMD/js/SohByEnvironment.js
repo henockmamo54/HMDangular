@@ -11,7 +11,14 @@
                     // url: "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly?ItemSN=2391&UnitSN=50058&OrderBy=soh+DESC",
                      url: function(){ //console.log("on read method");
                                     var location = window.location.toString();
-                     return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&')) +"&OrderBy=SOH+Desc";
+                         var itemctsh=location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                         var filter=itemctsh.substring(itemctsh.lastIndexOf('?'), itemctsh.lastIndexOf('&'))
+                         var program=itemctsh.substring(itemctsh.lastIndexOf('&')+1 , itemctsh.length);
+                         if(program=="ProgramID=10"){
+                             return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentCode=CNPH,DUVH,MKVH,JMVH,NKVH,BDVH,DSVH,HWVH,DDVH,ASVH,CHVH,AFVH,GMVH,SOVH,BOVH,HAVH," +"&OrderBy=SOH+Desc"  
+                         }
+                         console.log(program);
+                     return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentGroupCode=hub" +"&OrderBy=SOH+Desc";
                      },
                     
                     type: "get",
