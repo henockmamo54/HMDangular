@@ -8,7 +8,7 @@
     right: 0%;
     width: 0px;
     height: 0px;
-   border-left: 25px solid transparent;
+    border-left: 30px solid transparent;
     color:black;
    
 }
@@ -20,29 +20,31 @@
 .Excess:before
 {
      content:'pls';
-    border-top: 25px solid #E78A1F;
+    border-top: 35px solid #4DB3D6;
 }
 
 
 .Normal:before
 {   content: "N";
-    border-top: 25px solid #49A145;
+    border-top: 35px solid #49A145;
     
 
 }
 
 .BelowMin:before
 {   content: "BM";
-    border-top: 25px solid #4DB3D6;
+    border-top: 35px solid #E78A1F;
 
 }
 .StockedOut:before 
 {  content: "SO";
-    border-top: 25px solid #CE3C3E;
+    border-top: 35px solid #CE3C3E;
 }
 
 .sstatus{
     padding:0px;
+    padding-right:2%;
+    font-size:9px;
     position: absolute;
     top: 0%;
     right: 0%;
