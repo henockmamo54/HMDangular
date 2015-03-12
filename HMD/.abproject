@@ -5,7 +5,7 @@
   "AppIdentifier": "com.telerik.HMD",
   "DisplayName": "HMD",
   "Author": "",
-  "Description": "HMD",
+  "Description": "HCMIS Mobile Dashboard",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -15,7 +15,11 @@
   "iOSBackgroundMode": [],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
   "FrameworkVersion": "3.5.0",
-  "AndroidPermissions": [],
+  "AndroidPermissions": [
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.ACCESS_WIFI_STATE",
+    "android.permission.INTERNET"
+  ],
   "DeviceOrientations": [
     "Portrait",
     "Landscape"
@@ -25,7 +29,10 @@
   "Framework": "Cordova",
   "WP8TileTitle": "",
   "WP8Publisher": "",
-  "WP8Capabilities": [],
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
   "WP8Requirements": [],
   "WP8PublisherID": "{0730cab4-3732-4101-a631-e9b6db88869a}",
   "WP8ProductID": "{3ed72ac4-cc7a-4c68-8723-2dc1a5e5c6f1}",
