@@ -1,6 +1,7 @@
 (function () { 
         var selectedItemSN;
         var selectedItemName;
+        var SelectedHub;
         
         window.SohByEnvironment = {
             data: new kendo.data.DataSource({
@@ -37,12 +38,17 @@
         }),
                 show: function (){  
                     SohByEnvironment.data.read();
+                     var location = window.location.toString();
+                    SelectedHub = location.substring(location.lastIndexOf('&')+1 , location.length);
+                   // $("#stock-by-hub").data("kendoMobileNavBar").title("SelectedHub");
                 },
                 back: function () {
                     app.navigate("#:back");
                 },
                 hide: function () {/*TODO: free resources here*/ console.log('hide called');},  
-               
+                title:function(){
+                    return 'test title';
+                },               
     };
   
 }());
