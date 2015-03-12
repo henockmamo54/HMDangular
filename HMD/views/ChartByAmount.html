@@ -1,0 +1,19 @@
+<div data-role="view" data-title="Chart by Amount" data-reload="true" data-layout="master-layout">
+    <div class="header" id="header_desc">
+        
+    </div>
+    <div id="chart"></div>
+ <script>
+     
+  $( document ).ready(function() {
+   var chart = c3.generate({
+    data: {
+        columns: [
+            ['data1', 100, 200, 150, 300, 200],
+            ['data2', 400, 500, 250, 700, 300],
+        ]
+    }
+});
+});
+  
+ </script>
