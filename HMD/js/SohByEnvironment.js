@@ -2,8 +2,10 @@
         var selectedItemSN;
         var selectedItemName;
         var SelectedHub;
+        var  urlSOHByEnviroment = "";
+        var urlSOHByHub = "";
         
-        window.SohByEnvironment = {
+    window.SohByEnvironment = {
             data: new kendo.data.DataSource({
             offlineStorage: "program-list",
             transport: {
@@ -14,9 +16,14 @@
                          var filter=itemctsh.substring(itemctsh.lastIndexOf('?'), itemctsh.lastIndexOf('&'))
                          var program=itemctsh.substring(itemctsh.lastIndexOf('&')+1 , itemctsh.length);
                          if(program=="ProgramID=10"){
-                             return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentCode=CNPH,DUVH,MKVH,JMVH,NKVH,BDVH,DSVH,HWVH,DDVH,ASVH,CHVH,AFVH,GMVH,SOVH,BOVH,HAVH," +"&OrderBy=SOH+Desc"  
+                             urlSOHByEnviroment = "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentCode=CNPH,DUVH,MKVH,JMVH,NKVH,BDVH,DSVH,HWVH,DDVH,ASVH,CHVH,AFVH,GMVH,SOVH,BOVH,HAVH," +"&OrderBy=SOH+Desc";
+                             localStorage.setItem("urlSOH",urlSOHByEnviroment);
+                             return urlSOHByEnviroment; 
                          }
-                         return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentGroupCode=hub" +"&OrderBy=SOH+Desc";
+                         
+                         urlSOHByHub = "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentGroupCode=hub" +"&OrderBy=SOH+Desc";
+                         localStorage.setItem("urlSOH",urlSOHByHub);
+                         return urlSOHByHub;
                      },
                     
                     type: "get",
@@ -28,7 +35,7 @@
                     selectedItemSN = location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
                     //pull the Program Name from the query string
                     var location = window.location.toString();                         
-                selectedItemCTSH = location.substring(location.lastIndexOf('&')+1 , location.length);
+                    selectedItemCTSH = location.substring(location.lastIndexOf('&')+1 , location.length);
                 
                  
                 var selecttedItemUnit=selectedItemCTSH.substring(0,selectedItemCTSH.indexOf("SOH"));
@@ -49,12 +56,8 @@
                 show: function (){  
                     SohByEnvironment.data.read();
                      var location = window.location.toString();
-                    SelectedHub = location.substring(location.lastIndexOf('&')+1 , location.length);
-                    
-                    
-                    var selectedItemSN = location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
-                    
-
+                    SelectedHub = location.substring(location.lastIndexOf('&')+1 , location.length);                                        
+                    var selectedItemSN = location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));                    
                 },
                 back: function () {
                     app.navigate("#:back");

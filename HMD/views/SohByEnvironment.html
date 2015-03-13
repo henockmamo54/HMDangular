@@ -1,16 +1,15 @@
-    <div data-role="layout" data-id="back-layout">        
+ <div data-role="layout" data-id="back-layout">        
         <div data-role="header">
             <div data-role="navbar" class="blueBackground">               
                 <a data-click="Programs.back" data-role="button" data-align="left" class="button_Background">Back</a>
-                <span data-role="view-title"></span>
-                
+                <span data-role="view-title"></span>                
             </div>
         </div>
          <div data-role="footer">
-            <div data-role="tabstrip" id="custom-tabstrip" class="gray_background" >
-            <a id="MOS" href="views/ChartByMOS.html" data-icon="contacts"> MOS 
-            </a><a  href="#" data-icon="history"> SOH
-            </a><a  href="#" data-icon="favorites"> AMC
+            <div data-role="tabstrip" id="custom-tabstrip" class="gray_background" >                
+            <a id="MOS" href="views/ChartByMOS.html" data-icon="contacts"> MOS </a>
+            <a  href="views/ChartBySOH.html" data-icon="history"> SOH
+            </a><a  href="views/ChartByAMC.html" data-icon="favorites"> AMC
             </a><a  href="views/Info.html" data-icon="about">Info</a>
         </div>
          </div>
@@ -23,11 +22,10 @@
    
     
     <ul id="theul" data-role="listview"  data-source="SohByEnvironment.data" data-pull-to-refresh="true" data-template="SohByEnvironment-template">
-        </ul>
+     </ul>
     
 </div>
-
- <script type="text/x-kendo-template" id="SohByEnvironment-template">           
+<script type="text/x-kendo-template" id="SohByEnvironment-template">           
        <a href="views/ItemDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH # - #: UnitSH # SOH: #:accounting.formatNumber(SOH) #" class="# if(SS!=null) {# #:SS.replace(/ /g,'')# #} #">
            <span class="sstatus"># if(SS!=null) {# #:SS.substr(0,1)# #} #</span>
            <div class="row1">

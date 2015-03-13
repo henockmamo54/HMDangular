@@ -16,8 +16,7 @@
         </div>
          </div>
     </div>
-
-<div data-role="view" data-title="Chart by MOS" data-reload="true" data-layout="level3-layout">
+<div data-role="view" data-title="Chart by AMC" data-reload="true" data-layout="level3-layout">
     <div class="header" id="header_desc">
        
     </div>
@@ -97,7 +96,7 @@ var chart =  d3.select('.chart')
 // we use the d3.JSON to access our api
 
   var data =  d3.json(localStorage.getItem("urlSOH"), function(err, data) {
-      y.domain([0,d3.max(data.Data,function(d){return d.MOS;})]);
+      y.domain([0,d3.max(data.Data,function(d){return d.AMC;})]);
       x.domain(data.Data.map(function(d){ return d.EnvironmentCode; }));
 
     chart.append("g")
@@ -113,7 +112,7 @@ var chart =  d3.select('.chart')
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("MOS");
+        .text("AMC");
 
 
 
@@ -122,17 +121,17 @@ var chart =  d3.select('.chart')
                 .enter().append("rect")
                 .attr("class", "bar")
                 .attr("x", function(d) { return x(d.EnvironmentCode); })
-                .attr("y", function(d) { return y(d.MOS); })
-                .attr("height", function(d) { return height - y(d.MOS); })
+                .attr("y", function(d) { return y(d.AMC); })
+                .attr("height", function(d) { return height - y(d.AMC); })
                 .attr("width", x.rangeBand());
 
 
 
         bar.append("text")
-        .attr("y", function(d) { return ( y(d.MOS) + 3); })
+        .attr("y", function(d) { return ( y(d.AMC) + 3); })
         .attr("x", x.rangeBand() / 2)
         .attr("dy", ".35em")
-        .text(function(d) { return d.MOS; });
+        .text(function(d) { return d.AMC; });
 
       });
 };

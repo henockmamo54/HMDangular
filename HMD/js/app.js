@@ -42,6 +42,7 @@
 
     }, false);
 
+    window.st = "I a, global";
     window.app = app;
 
 }());
