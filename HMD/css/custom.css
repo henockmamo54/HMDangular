@@ -158,6 +158,13 @@ green 49A145--
     padding-bottom:2px;
     
 }
+.program-rows{
+    width:73%;
+    padding-bottom:2px;
+    display:inline-block;
+    margin-left:10px;
+    
+}
 
 .row2
       {
@@ -266,6 +273,67 @@ green 49A145--
 .titleBar{
     background-color:slategrey ;
 }
+
+.ART{
+    background-image: url(img/A.png);                       
+    background-repeat: no-repeat;
+    background-position: center center;
+    display:inline-block;
+    
+    width: 12%;
+    height: 50px;
+    display: inline-block;
+    background-size: contain;
+}
+.FP{
+    background-image: url(img/F.png);  
+    background-repeat: no-repeat;
+    background-position: center center;
+    display:inline-block;
+    
+    width: 12%;
+    height: 50px;
+    display: inline-block;
+    background-size: contain;
+}
+.MAL{
+    background-image: url(img/M.png);  
+    background-repeat: no-repeat;
+    background-position: center center;
+    display:inline-block;
+    
+    width: 12%;
+    height: 50px;
+    display: inline-block;
+    background-size: contain;
+}
+.MCH{
+    background-image: url(img/M.png);  
+    background-repeat: no-repeat;
+    background-position: center center;
+    display:inline-block;
+    
+    width: 12%;
+    height: 50px;
+    display: inline-block;
+    background-size: contain;
+}
+.VAC{
+    background-image: url(img/V.png);  
+    background-repeat: no-repeat;
+    background-position: center center;
+    display:inline-block;
+    
+    width: 12%;
+    height: 50px;
+    display: inline-block;
+    background-size: contain;
+}
+
+.image: {   
+   content:url(img/A.png);
+}
+
 
 <!----- Icons ---->
 
