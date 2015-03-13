@@ -1,21 +1,24 @@
 <div data-role="view" data-title="Info"  data-reload="true" data-layout="Info-layout">
     <div class="header" id="header_desc">
     </div>
-      
-    <div class="panel_container">
-     <span style="color:#4DB3D6;">  <b> Blue:</b>  Excess -  Stock on hand is above Max </span>  </br>
-      <span style="color:#49A145;">  <b>  Green : Normal - Stock on hand is between Min and Max</span> </br>
-     <span style="color:#E78A1F;">  <b>   Orange: BelowMin - Stock on hand is below Min and above 0 </span></br>
-       <span style="color:#CE3C3E;">  <b> Red : StockedOut - Stock on hand is 0 </span>
-
+       <div style="margin-left:10px">
+       <b> Keys </b>
     </div>
-    <div class="panel_container">
-      <span class="medium_text" >  <b>  Min:</b> Minimum stock that the Hub should have - 2 months of stock </span></br></br>
-      <span class="medium_text">  <b>  Max:</b> Maximum stock that the Hub should have - 4 months of stock </span></br></br>
-      <span class="medium_text">  <b>  AMC:</b> Average Monthly Consumption =  ([TotalIssue]/([FiscalYeardays-DOS])) * 30 </span></br></br>
-      <span class="medium_text">  <b>  SOH:</b> Stock on Hand </span></br></br>
-      <span class="medium_text">  <b>  MOS = SOH/AMC</b></span> 
-
-
+    <ul class="km-list">
+        <li><span style="color:#4DB3D6;">  <b> Blue:</b>  Excess -  Stock on hand is above Max </span>  </li>
+        <li><span style="color:#49A145;">  <b>  Green</b> : Normal - Stock on hand is between Min and Max</span> </li>
+        <li> <span style="color:#E78A1F;">  <b> Orange</b>: BelowMin  - Stock on hand is below Min and above 0 </span></li>
+        <li> <span style="color:#CE3C3E;">  <b> Red</b> : StockedOut - Stock on hand is 0 </span></li>
+    </ul>
+  
+    <div style="margin-left:10px; padding-top:25px;">
+      <b>  Definition </b>
     </div>
+    <ul class="km-list">
+        <li><span class="medium_text" >  <b>  Min:</b> Minimum stock that the Hub should have - 3 months of stock </span></li>
+     <li> <span class="medium_text">  <b>  Max:</b> Maximum stock that the Hub should have - 6 months of stock </span></li>
+      <li><span class="medium_text">  <b>  AMC:</b> Average Monthly Consumption =  ([TotalIssue]/([FiscalYeardays-DOS])) * 30 </span></li>
+      <li><span class="medium_text">  <b>  SOH:</b> Stock on Hand </span></li>
+      <li><span class="medium_text">  <b>  MOS = SOH/AMC</b></span></li> 
+</ul>
 </div>
