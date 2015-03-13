@@ -55,7 +55,7 @@
                 $("tab1").attr("href","test");
                 },
                 back: function () {
-                    app.navigate("#:back");
+                    app.navigate("#");
                     Items.data.read();
                 },
              test : function(){
