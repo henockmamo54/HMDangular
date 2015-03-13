@@ -3,62 +3,119 @@
     <div class="header" id="header_desc">
        
     </div>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <meta charset="utf-8">
 <style>
 
-.chart rect {
+
+
+.bar {
   fill: steelblue;
 }
 
-.chart text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
+.bar:hover {
+  fill: brown;
 }
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
 
 </style>
 
 <svg class="chart"></svg>
 <script>
-
-var width = 400,
-    barHeight = 20 ;
-
-var x = d3.scale.linear()
-    .range([0, width]);
-
-var chart = d3.select(".chart")
-    .attr("width", width);
-
-
-
-d3.json("http://webapi.dashboard.hcmisonline.org:80/api/PR_WebApi/Get",function(error, data) {
-  x.domain([0, d3.max(data.Data,function(d) { return d.TotalValue ; })]);
-
-  chart.attr("height", barHeight * data.Data.length);
-
-// this will stack the bars vertically starting from 0,0 which means top
-  var bar = chart.selectAll("g")
-      .data(data.Data)
-      .enter().append("g")
-      .attr("transform", function(d, i) {return "translate(0," + i * barHeight + ")"; });
-
-
-  bar.append("rect")
-      .attr("width", function(d) { return x(d.TotalValue);})
-      .attr("height", barHeight - 1);
-
-  bar.append("text")
-      .attr("x", function(d) { return (x(d.TotalValue) - 3); })
-      .attr("y", barHeight / 2)
-      .attr("dy", ".35em")
-      .text(function(d) { console.log("text is" + d.TotalValue); return d.TotalValue; });
+  //1st define the drawing canvas size, The height can be defined by as but the width will depend on the number of data set items
+  // we have so we only define the single bar thickness here and multiply it with the number of datasets later on to get the
+  // total width
+  $(window).resize(function() {
+      console.log('resized');
+      $('g').remove();
+      gr();
 });
+var gr = function()
+{
+var margin = {top: 40, right: 10, bottom: 30, left: 50},
+    width = $(document).width() - margin.left - margin.right,
+    height = ($(document).height()-120) - margin.top - margin.bottom;
 
-function type(d) {
-  d.value = +d.Data.TotalValue; // coerce to number
-  return d;
-}
+  var formatNumber = d3.format(".2s");
+  var x = d3.scale.ordinal()
+          .rangeRoundBands([0,width],.1);
 
+  var y = d3.scale.linear()
+          .range([height, 0]);
+
+  var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(function(d){return formatNumber(d);});
+
+
+var chart =  d3.select('.chart')
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+//3rd lets get the data from our API
+// we use the d3.JSON to access our api
+
+  var data =  d3.json("http://webapi.dashboard.hcmisonline.org:80/api/PR_WebApi/Get", function(err, data) {
+      y.domain([0,d3.max(data.Data,function(d){return d.TotalValue;})]);
+      x.domain(data.Data.map(function(d){ return d.ProgramCode; }));
+
+    chart.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+    chart.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("ETB Amount");
+
+
+
+      var bar = chart.selectAll(".bar")    //ghost selection
+                .data(data.Data)     // we are binding an array of data to it
+                .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", function(d) { return x(d.ProgramCode); })
+                .attr("y", function(d) { return y(d.TotalValue); })
+                .attr("height", function(d) { return height - y(d.TotalValue); })
+                .attr("width", x.rangeBand());
+
+
+
+        bar.append("text")
+        .attr("y", function(d) { return ( y(d.TotalValue) + 3); })
+        .attr("x", x.rangeBand() / 2)
+        .attr("dy", ".35em")
+        .text(function(d) { return d.TotalValue; });
+
+      });
+};
+gr();    
 </script>
