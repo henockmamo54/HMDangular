@@ -7,8 +7,7 @@
             data: new kendo.data.DataSource({
             offlineStorage: "program-list",
             transport: {
-                read: {
-                    // url: "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly?ItemSN=2391&UnitSN=50058&OrderBy=soh+DESC",
+                read: {                    
                      url: function(){ //console.log("on read method");
                                     var location = window.location.toString();
                          var itemctsh=location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
@@ -17,8 +16,7 @@
                          if(program=="ProgramID=10"){
                              return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentCode=CNPH,DUVH,MKVH,JMVH,NKVH,BDVH,DSVH,HWVH,DDVH,ASVH,CHVH,AFVH,GMVH,SOVH,BOVH,HAVH," +"&OrderBy=SOH+Desc"  
                          }
-                         console.log(program);
-                     return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentGroupCode=hub" +"&OrderBy=SOH+Desc";
+                         return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentGroupCode=hub" +"&OrderBy=SOH+Desc";
                      },
                     
                     type: "get",
@@ -52,13 +50,18 @@
                     SohByEnvironment.data.read();
                      var location = window.location.toString();
                     SelectedHub = location.substring(location.lastIndexOf('&')+1 , location.length);
-                   // $("#stock-by-hub").data("kendoMobileNavBar").title("SelectedHub");
+                    
+                    
+                    var selectedItemSN = location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                    
+
                 },
                 back: function () {
                     app.navigate("#:back");
                 },
                 hide: function () {/*TODO: free resources here*/ console.log('hide called');},  
                 title:function(){
+                    console.log(window.location.toString());
                     return 'test title';
                 },               
     };
