@@ -16,7 +16,7 @@
                  read: {
                     url: function(){ console.log("on read method");
                                     var location = window.location.toString();
-                                    var test=location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                                    var test=location.substring(location.lastIndexOf('?'), location.indexOf("&"));
                                     var Soh="views/ItemList.html"+test+"&OrderBy=SOH+Desc&"+location.substring(location.lastIndexOf('&')+1, location.length);
                                     var MOS="views/ItemList.html"+test+"&OrderBy=MOS+Desc&"+location.substring(location.lastIndexOf('&')+1, location.length);
                                     var SS="views/ItemList.html"+test+"&OrderBy=SS+Desc&"+location.substring(location.lastIndexOf('&')+1, location.length);
