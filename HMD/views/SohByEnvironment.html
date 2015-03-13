@@ -1,4 +1,20 @@
-
+    <div data-role="layout" data-id="back-layout">        
+        <div data-role="header">
+            <div data-role="navbar" class="blueBackground">               
+                <a data-click="Programs.back" data-role="button" data-align="left" class="button_Background">Back</a>
+                <span data-role="view-title"></span>
+                
+            </div>
+        </div>
+         <div data-role="footer">
+            <div data-role="tabstrip" id="custom-tabstrip" class="gray_background" >
+            <a id="MOS" href="views/ChartByMOS.html" data-icon="contacts"> MOS 
+            </a><a  href="#" data-icon="history"> SOH
+            </a><a  href="#" data-icon="favorites"> AMC
+            </a><a  href="views/Info.html" data-icon="about">Info</a>
+        </div>
+         </div>
+    </div>
 
 <div data-role="view"  data-title="Stock by Hub" data-show="SohByEnvironment.show" data-hide="SohByEnvironment.hide" data-reload="true" data-layout="back-layout">
    <div class="header header_desc" id="header_desc_SohByEnvironment" >
