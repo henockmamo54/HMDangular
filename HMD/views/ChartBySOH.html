@@ -1,6 +1,14 @@
 <!DOCTYPE html>
-
-<div data-role="layout" data-id="level3-layout">        
+<script>    $(document).ready(function(){
+                  $('.chart').remove();
+                  //gr(); 
+                  console.log('ready');  
+       $( window ).unload(function() {
+          $('.chart').remove();
+});
+                      });
+</script>
+<div data-role="layout" data-id="level3SOH-layout">        
         <div data-role="header">
             <div data-role="navbar" class="blueBackground">               
                 <a data-click="Programs.back" data-role="button" data-align="left" class="button_Background">Back</a>
@@ -10,19 +18,15 @@
         <div data-role="footer">
             <div data-role="tabstrip" id="custom-tabstrip" class="gray_background" >                
             <a id="MOS" href="views/ChartByMOS.html" data-icon="contacts"> MOS </a>
-            <a  href="views/ChartByMOS.html" data-icon="history"> SOH
+            <a  href="views/ChartBySOH.html" data-icon="history"> SOH
             </a><a  href="views/ChartByAMC.html" data-icon="favorites"> AMC
             </a><a  href="views/Info.html" data-icon="about">Info</a>
         </div>
          </div>
     </div>
-<div data-role="view" data-title="Chart by SOH" data-reload="true" data-layout="level3-layout">
+<div data-role="view" data-title="Chart by SOH" data-reload="true" data-layout="level3SOH-layout">
     <div class="header" id="header_desc">
-       
-    </div>
-
-<!DOCTYPE html>
-<meta charset="utf-8">
+         
 <style>
 
 
@@ -52,7 +56,6 @@
 
 
 </style>
-
 <svg class="chart"></svg>
 <script>
   //1st define the drawing canvas size, The height can be defined by as but the width will depend on the number of data set items
@@ -137,3 +140,5 @@ var chart =  d3.select('.chart')
 };
 gr();
 </script>
+ </div>
+</div>
