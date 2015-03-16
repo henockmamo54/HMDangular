@@ -8,11 +8,39 @@ and this isnt documented anywhere :( -->
     <ul id="theul" data-role="listview" data-source="ItemDetail.data" data-pull-to-refresh="true" data-template="itemdetail-template">
         </ul>
 </div> -->
+ <style>
+  .legend {
+    font-size: 12px;
+  }
+  rect {
+    stroke-width: 2;
+  }
+  #chart {
+  height: 70px;
+  position: relative;
+  width: 70px;
+}
 
+.tooltip {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  display: none;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  width: 80px;
+  z-index: 10;
+}
+</style>
 <div id="ItemDetailMainDiv" data-role="view" data-title="Item Detial" data-show="ItemDetail.show" data-hide="ItemDetail.hide" data-reload="true" data-layout="back-layout">
    
     <div class="header header_desc" id="header_desc_ItemDetail"> 
     </div>       
+   
     <!--
     <ul id="theul5"  data-role="listview"  data-pull-to-refresh="true" >
       <li>
@@ -47,14 +75,135 @@ and this isnt documented anywhere :( -->
    
     
     
-    <ul id="theul3" data-role="listview" data-source="ItemExpiry.data" data-pull-to-refresh="true" data-template="itemexpiry-template">
-     
+    <!--<ul id="theul3" style="width:45%; float:left; display:grid" data-role="listview" data-source="ItemExpiry.data" data-pull-to-refresh="true" data-template="itemexpiry-template">
+    
+    </ul> -->
+    
+    <ul id="expirygraph" style="background-color:white;margin-top:0px;margin-bottom:0px;">
+        <li  style="list-style-type:none;">
+        <div style=""><b> Expiry </b> </div>  
+        <div id="chart" style="height:inherit;"></div></li>
+        <script>
+      (function(d3) {
+        'use strict';
+
+
+        var datasetconv =  [];
+        console.log($('#theul2'));
+        var width = $(document).width();
+        var height = 140;
+        var radius = Math.min(width, height) / 2;
+        var donutWidth =35;
+
+        var legendRectSize = 8;
+        var legendSpacing = 3;
+
+        var color = d3.scale.ordinal()
+        .range(['#A60F2B', '#648C85', '#B3F2C9', '#528C18', '#C3F25C']);
+
+        var svg = d3.select('#chart')
+          .append('svg')
+          .attr('width', width)
+          .attr('height', height)
+          .append('g')
+          .attr('transform', 'translate(' + (width / 1.5) +
+            ',' + (height / 2) + ')');
+
+        var arc = d3.svg.arc()
+          .innerRadius(radius-donutWidth)
+          .outerRadius(radius);
+
+        var pie = d3.layout.pie()
+          .value(function(d) { return d.value; })
+          .sort(null);
+
+          var tooltip = d3.select('#chart')            // NEW
+          .append('div')                             // NEW
+          .attr('class', 'tooltip');                 // NEW
+
+          tooltip.append('div')                        // NEW
+            .attr('class', 'label');                   // NEW
+
+          tooltip.append('div')                        // NEW
+            .attr('class', 'count');                   // NEW
+
+          tooltip.append('div')                        // NEW
+            .attr('class', 'percent');                 // NEW
+
+
+          d3.json('http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/ByIU_QuantityOnlyPivotedByMonth?ItemSN=1088&UnitSN=50065&EnvironmentCode=BDPH', function(error, dataset) {  // NEW
+            dataset.Data.forEach(function(d) {                    // NEW
+              datasetconv.push({label:"<3 months",value: +d.LessThan3});
+              datasetconv.push({label:"<6 months",value: +d.LessThan6});
+              datasetconv.push({label:"<12 months",value: +d.LessThan12});
+              datasetconv.push({label:">12 months",value: +d.Greaterthan12});
+              datasetconv.push({label:"Expired",value: +d.Expired});                            // NEW
+            });
+
+              var path = svg.selectAll('path')
+                .data(pie(datasetconv))
+                .enter()
+                .append('path')
+                .attr('d', arc)
+                .attr('fill', function(d, i) {
+                  return color(d.data.label);
+                });
+
+                path.on('mouseover', function(d) {           // NEW
+                  var total = '00';
+                  tooltip.select('.label').html(d.data.label);
+                  tooltip.select('.count').html(d.data.value);   // replace here the acutall quantity
+                  tooltip.select('.percent').html(d.data.value + '%');
+                  tooltip.style('display', 'block');
+
+                });
+
+                path.on('mouseout', function(d) {            // NEW
+                   tooltip.style('display', 'none');
+                });                                          // NEW
+
+                var legend = svg.selectAll('.legend')
+                .data(color.domain())
+                .enter()
+                .append('g')
+                .attr('class', 'legend')
+                .attr('transform', function(d, i) {
+                  var height = legendRectSize + legendSpacing;
+                  var offset =  height * color.domain().length / 2;
+                  var horz = ($(document).width() - 150) * -1;
+                  var vert = i * height - offset;
+                  return 'translate(' + horz + ',' + vert + ')';
+                })
+                .style("float",'left')
+                .style('display','grid')
+                .style('width','50%');
+
+                legend.append('rect')
+                .attr('width', legendRectSize)
+                .attr('height', legendRectSize)
+                .style('fill', color)
+                .style('stroke', color);
+
+               legend.append('text')
+              .attr('x', legendRectSize + legendSpacing)
+              .attr('y', legendRectSize - legendSpacing)
+              .text(function(d) { return d.toUpperCase(); });
+});
+
+
+
+
+      })(window.d3);
+    </script>
+     </li>
     </ul>
     
-    <ul id="theul4" data-role="listview" data-source="ItemManufacturer.data" data-pull-to-refresh="true" data-template="ItemManufacturer-template">
+     
+    <ul id="theul4" style="display:block; clear:both;" data-role="listview" data-source="ItemManufacturer.data" data-pull-to-refresh="true" data-template="ItemManufacturer-template">
      
     </ul> 
      
+   
   
    
       <script type="text/x-kendo-template" id="itemissue-template">
@@ -70,8 +219,7 @@ and this isnt documented anywhere :( -->
            
             </div>
         </a>
-    </script> 
-    
+    </script>     
      <script type="text/x-kendo-template" id="itemreceipt-template">
        
         <a href="views/ReceiptDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH # - #: UnitSH # SOH: #:accounting.formatNumber(SOH) #">
@@ -87,20 +235,24 @@ and this isnt documented anywhere :( -->
         </a>
     </script>
      <script type="text/x-kendo-template" id="itemexpiry-template">
-       
+     
         <a href="views/ExpiryDetail.html??ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH #">
             <div class="row1">
-                <div class="col1"> 
-                   <div><b> Expiry </b> </div>
-                  </div>                
+                <div class="col1" style="width:40%; float:left;"> 
+                   <div><b> Expiry </b> </div>                                 
                   <div class="medium_text"> Expired: #: accounting.formatNumber(Expired,0,",")  #%  </br>
                       &lt 3 : #: accounting.formatNumber(LessThan3,0,",") #% </br>
                       &lt 6 : #: accounting.formatNumber(LessThan6,0,",")#%  </br>
                       &lt 12 : #: accounting.formatNumber(LessThan12,0,",") #%  </br>
-                      &gt 12 : #: accounting.formatNumber(Greaterthan12,0,",") #% </div> 
-            </div>    
+                      &gt 12 : #: accounting.formatNumber(Greaterthan12,0,",") #% 
+                 </div> 
+            </div>             
+            <!DOCTYPE html>
            
+                        
         </a>
+       
+        
     </script>
     <script type="text/x-kendo-template" id="ItemManufacturer-template">
        
