@@ -79,7 +79,7 @@ and this isnt documented anywhere :( -->
     
     </ul> -->
     
-    <ul id="expirygraph" style="background-color:white;margin-top:0px;margin-bottom:0px;">
+    <ul id="expirygraph" data-role="listview" style="background-color:white;margin-top:0px;margin-bottom:0px;">
         <li  style="list-style-type:none;">
         <div style=""><b> Expiry </b> </div>  
         <div id="chart" style="height:inherit;"></div></li>
@@ -89,7 +89,7 @@ and this isnt documented anywhere :( -->
 
 
         var datasetconv =  [];
-        console.log($('#theul2'));
+        console.log($('#theul2 li'));
         var width = $(document).width();
         var height = 140;
         var radius = Math.min(width, height) / 2;
@@ -99,7 +99,8 @@ and this isnt documented anywhere :( -->
         var legendSpacing = 3;
 
         var color = d3.scale.ordinal()
-        .range(['#A60F2B', '#648C85', '#B3F2C9', '#528C18', '#C3F25C']);
+        .range(['#CE3C3E','#F95DF1','#B3F2C9','#C3F25C','#F90043']);
+        //.range(['#A60F2B', '#648C85', '#B3F2C9', '#528C18', '#C3F25C']);
 
         var svg = d3.select('#chart')
           .append('svg')
