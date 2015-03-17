@@ -22,17 +22,18 @@
             },
             schema: {
                 data: "Data"
-            }           
+            },
+            group: "DescriptionType"
         }),
-                show: function (){
-                    info.data.read();
-                    
-                    
-                    
-                },
-                back: function () {
-                    app.navigate("#:back");
-                },
+            show: function (){
+                info.data.read();
+
+
+
+ },
+            back: function () {
+                app.navigate("#:back");
+            },
                 hide: function () {/*TODO: free resources here*/ console.log('hide called');},  
                
     };
