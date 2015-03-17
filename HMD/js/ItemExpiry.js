@@ -1,7 +1,8 @@
 (function () { 
         var selectedItemSN;
         var selectedItemName;
-        
+        var urlItemExpiry;
+    
         window.ItemExpiry = {
             data: new kendo.data.DataSource({
             offlineStorage: "program-list",
@@ -10,7 +11,9 @@
                     //url: "http://webapi.dashboard.hcmisonline.org:80/api/SS_WebApi/ByIU_QuantityPivotedByMonthFakeData",
                     url: function(){ console.log("Expiry read ");
                                     var location = window.location.toString();
-                     return "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/ByIU_QuantityOnlyPivotedByMonth"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                     urlItemExpiry = "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/ByIU_QuantityOnlyPivotedByMonth"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                     localStorage.setItem("itemExpiry",urlItemExpiry);                                    
+                     return urlItemExpiry;
                      },
                     type: "get",
                     dataType: "json"
