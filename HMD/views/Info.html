@@ -1,24 +1,30 @@
-<div data-role="view" data-title="Info"  data-reload="true" data-layout="Info-layout">
-    <div class="header" id="header_desc">
-    </div>
-       <div style="margin-left:10px">
-       <b> Keys </b>
-    </div>
-    <ul class="km-list">
-        <li><span style="color:#4DB3D6;">  <b> Blue:</b>  Excess -  Stock on hand is above Max </span>  </li>
-        <li><span style="color:#49A145;">  <b>  Green</b> : Normal - Stock on hand is between Min and Max</span> </li>
-        <li> <span style="color:#E78A1F;">  <b> Orange</b>: BelowMin  - Stock on hand is below Min and above 0 </span></li>
-        <li> <span style="color:#CE3C3E;">  <b> Red</b> : StockedOut - Stock on hand is 0 </span></li>
+
+
+<div data-role="view" data-title="Info" data-show="info.show" data-hide="info.hide" data-reload="true" data-layout="Info-layout">
+ 
+    
+    <ul id="theul" data-role="listview" data-source="info.data" data-pull-to-refresh="true" data-template="info-template">
     </ul>
-  
-    <div style="margin-left:10px; padding-top:25px;">
-      <b>  Definition </b>
-    </div>
-    <ul class="km-list">
-        <li><span class="medium_text" >  <b>  Min:</b> Minimum stock that the Hub should have - 3 months of stock </span></li>
-     <li> <span class="medium_text">  <b>  Max:</b> Maximum stock that the Hub should have - 6 months of stock </span></li>
-      <li><span class="medium_text">  <b>  AMC:</b> Average Monthly Consumption =  ([TotalIssue]/([FiscalYeardays-DOS])) * 30 </span></li>
-      <li><span class="medium_text">  <b>  SOH:</b> Stock on Hand </span></li>
-      <li><span class="medium_text">  <b>  MOS = SOH/AMC</b></span></li> 
-</ul>
+    
+   
+   <script type="text/x-kendo-template" id="info-template">
+          
+       <div class="row1">
+                
+                <div class="col1">
+                   
+                </div>
+                 <div class="medium_text" >    #: Name #</div> 
+                 <div class="medium_text" >   #: Description #</div>            
+          
+       </div>
+         
+    </script>
+    
+     
+
+    
 </div>
+
+
+   
