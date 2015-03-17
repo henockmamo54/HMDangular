@@ -1,6 +1,7 @@
  (function () { 
         var selectedItemSN;
         var selectedItemName;
+        var urlPipeLine;
         
         window.ItemGit = {
             data: new kendo.data.DataSource({
@@ -10,7 +11,9 @@
                     //url: "http://webapi.dashboard.hcmisonline.org:80/api/RCD_WebApi/ByIU?ItemSN=2191&UnitSN=50133",
                      url: function(){ console.log("receipt read rrrread");
                                     var location = window.location.toString();
-                     return "http://webapi.dashboard.hcmisonline.org/api/RIDRCD_WebApi/RIDRCDPOD_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                       urlPipeLine = "http://webapi.dashboard.hcmisonline.org/api/RIDRCD_WebApi/RIDRCDPOD_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                      console.log(urlPipeLine);                                    
+                     return urlPipeLine;
                      },
                     type: "get",
                     dataType: "json"
