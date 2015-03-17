@@ -24,6 +24,18 @@
     padding-top:8px;
     padding-bottom:8px;
 }
+.Blue{
+    color:#4DB3D6;
+}
+.Green{
+     color:#49A145;
+}
+.Orange{
+     color:#E78A1F;
+}
+.Red{
+     color:#CE3C3E;
+}
       
       
       
@@ -191,6 +203,10 @@ green 49A145--
     font-size:12px;
     color:#888;
 }
+.medium_text_nocolor{    
+
+    font-size:12px;
+}
 
 .large_text{    
 
@@ -350,6 +366,8 @@ green 49A145--
   vertical-align: text-bottom;
     font-size: 1.875em;
 }
+
+
 
 <!----- Icons ---->
 
