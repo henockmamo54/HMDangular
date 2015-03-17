@@ -275,7 +275,7 @@ green 49A145--
 }
 
 .ART{
-    background-image: url(img/A.png);                       
+   <!-- background-image: url(img/A.png);                       
     background-repeat: no-repeat;
     background-position: center center;
     display:inline-block;
@@ -283,57 +283,79 @@ green 49A145--
     width: 12%;
     height: 50px;
     display: inline-block;
-    background-size: contain;
+    background-size: contain; -->
+
+    background-color:#59A2BE;
+    box-shadow: inset 0 0 100px #59A2BE;
+    color:white;    
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 12%;
+    height: 50px;
+    display: inline-block;
+    text-align:center;
+    vertical-align: text-bottom;
+     
 }
 .FP{
-    background-image: url(img/F.png);  
+    background-color:#F9A43E;
+    box-shadow: inset 0 0 100px #F9A43E;
+    color:white;    
     background-repeat: no-repeat;
     background-position: center center;
-    display:inline-block;
-    
     width: 12%;
     height: 50px;
     display: inline-block;
-    background-size: contain;
+    text-align:center;
+    vertical-align: text-bottom;
 }
 .MAL{
-    background-image: url(img/M.png);  
+    background-color:#AD62A7;
+    box-shadow: inset 0 0 100px #AD62A7;
+    color:white;    
     background-repeat: no-repeat;
     background-position: center center;
-    display:inline-block;
-    
     width: 12%;
     height: 50px;
     display: inline-block;
-    background-size: contain;
+    text-align:center;
+    vertical-align: text-bottom;
 }
 .MCH{
-    background-image: url(img/C.png);  
+     background-color:#F58559;
+    box-shadow: inset 0 0 100px #F58559;
+    color:white;    
     background-repeat: no-repeat;
     background-position: center center;
-    display:inline-block;
-    
     width: 12%;
     height: 50px;
     display: inline-block;
-    background-size: contain;
+    text-align:center;
+    vertical-align: text-bottom;
 }
 .VAC{
-    background-image: url(img/V.png);  
+    background-color:#E4C62E;
+    box-shadow: inset 0 0 100px #E4C62E;
+    color:white;    
     background-repeat: no-repeat;
     background-position: center center;
-    display:inline-block;
-    
     width: 12%;
     height: 50px;
     display: inline-block;
-    background-size: contain;
+    text-align:center;
+    vertical-align: top;
 }
 
-.image: {   
-   content:url(img/A.png);
-}
 
+
+.program_text{
+ text-align:center; 
+  position: relative;
+  top: 25%;
+  font-size: 1.875em;       
+  color:white;
+  display: inline-block;
+}
 
 <!----- Icons ---->
 

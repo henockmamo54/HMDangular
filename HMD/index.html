@@ -150,7 +150,7 @@
         #console.log($("body").width() - 70);#
         <a href="views/ItemList.html?ProgramID=#: ProgramID #& #: ProgramName #">
             <div  class="#:ProgramCode #" > 
-                   
+                <span class="program_text"> # if(ProgramName!="MCH"){# #: ProgramName.substr(0,1) # #} else {# C #}#</span>   
             </div>
             
             <div class="program-rows" >
