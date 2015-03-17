@@ -274,87 +274,81 @@ green 49A145--
     background-color:slategrey ;
 }
 
-.ART{
-   <!-- background-image: url(img/A.png);                       
-    background-repeat: no-repeat;
-    background-position: center center;
-    display:inline-block;
-    
-    width: 12%;
-    height: 50px;
-    display: inline-block;
-    background-size: contain; -->
-
-    background-color:#59A2BE;
-    box-shadow: inset 0 0 100px #59A2BE;
-    color:white;    
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 12%;
-    height: 50px;
-    display: inline-block;
-    text-align:center;
-    vertical-align: text-bottom;
+.ART{   
+  border-radius: 100px;
+  background: #59A2BE;
+  color: white;
+  padding: 13px 18px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 18px;;
      
 }
 .FP{
-    background-color:#F9A43E;
-    box-shadow: inset 0 0 100px #F9A43E;
-    color:white;    
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 12%;
-    height: 50px;
-    display: inline-block;
-    text-align:center;
-    vertical-align: text-bottom;
+  border-radius: 100px;
+  background: #F9A43E;
+  color: white;
+  padding: 13px 18px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 18px;;
 }
 .MAL{
-    background-color:#AD62A7;
-    box-shadow: inset 0 0 100px #AD62A7;
-    color:white;    
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 12%;
-    height: 50px;
-    display: inline-block;
-    text-align:center;
-    vertical-align: text-bottom;
+  border-radius: 100px;
+  background: #AD62A7;
+  color: white;
+  padding: 13px 18px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 18px;
 }
 .MCH{
-     background-color:#F58559;
-    box-shadow: inset 0 0 100px #F58559;
-    color:white;    
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 12%;
-    height: 50px;
-    display: inline-block;
-    text-align:center;
-    vertical-align: text-bottom;
+  border-radius: 100px;
+  background: #F58559;
+  color: white;
+  padding: 13px 18px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 18px;
 }
 .VAC{
-    background-color:#E4C62E;
-    box-shadow: inset 0 0 100px #E4C62E;
-    color:white;    
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 12%;
-    height: 50px;
-    display: inline-block;
-    text-align:center;
-    vertical-align: top;
+   border-radius: 100px;
+  background: #E4C62E;
+  color: white;
+   padding: 13px 18px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 18px;
+}
+
+.ATLP{
+  border-radius: 100px;
+  background: #E4C62E;
+  color: white;
+  padding: 13px 18px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 18px;
 }
 
 
 
 .program_text{
  text-align:center; 
-  position: relative;
-  top: 25%;
+ vertical-align: -webkit-baseline-middle;
+  padding-top: 25%;
   font-size: 1.875em;       
   color:white;
   display: inline-block;
+}
+.test_css{
+    border-radius: 100px;
+  background: #000;
+  color: white;
+  padding: 15px 23px;
+  display: inline-block;
+  vertical-align: text-bottom;
+    font-size: 1.875em;
 }
 
 <!----- Icons ---->
