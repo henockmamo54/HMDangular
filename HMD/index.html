@@ -10,6 +10,7 @@
     <link href="css/ribbon.css" rel="stylesheet">
     <link href="css/tab.css" rel="stylesheet">
     <link href="css/c3.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/magic.min.css">
     
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
@@ -137,17 +138,17 @@
         </ul>
     </div>
     <!-- views  -->     
-    <div data-role="view" id="index" data-title="Programs">
+    <div data-role="view" id="index" data-title="Programs">     
         <ul id="theul" data-role="listview" data-source="Programs.data" data-pull-to-refresh="true" data-template="categories-template">
         </ul>
     </div> 
     
  
-   <!-- 
+   
     <div data-role="view" id="splash">
-        this is my splash page
+        this is my splash page     
     </div>
--->
+
     <script type="text/x-kendo-template" id="categories-template">
         #console.log($("body").width() - 70);#
         <a href="views/ItemList.html?ProgramID=#: ProgramID #& #: ProgramName #">
@@ -166,7 +167,17 @@
             </div>
         </a>
     </script>
-    
+    <script>
+        var loc = window.location;
+        (function(){
+             // var location = window.location;
+              //var x  = location.substring(0, location.lastIndexOf('#'));
+            //setTimeout(function(){$('#splash').addClass('magictime puffOut'); anim();}, 5000);
+             //console.log('pls');
+             })();
+        
+                          
+    </script>
 
 </body>
 

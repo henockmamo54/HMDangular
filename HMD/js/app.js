@@ -37,7 +37,7 @@
             layout: "master-layout",
             skin: "flat",
             transition: "slide",
-            initial:"index"
+            initial:"splash"
         });
 
     }, false);
