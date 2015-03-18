@@ -11,11 +11,23 @@
                     dataType: "json"
                 }
             },
+                requestStart: function() {
+                    console.log($(document).height()/2 +' height'); 
+                    $('#progressbar').css('visibility', 'visible');
+                    $('#progressbar').css('padding-top', $(document).height()/4 + "px");
+                    $('#progressbar').css('padding-bottom', $(document).height()/3 + "px");
+                    
+                    //kendo.ui.progress($("#progress"), true);                                                            
+                },
+                requestEnd: function() {
+                    console.log('progress should end');
+                    //kendo.ui.progress($("#progress"), false);
+                    $('#progressbar').css('display', 'none');
+                },
             change: function (e) {               
                 var data = this.data();                
-                var parentWidth = $(document).width();   
-                //console.log(data[0].ProgramID);
-                               
+                var parentWidth = $(document).width();        
+               
             },
             schema: {
                 data: "Data"
@@ -34,15 +46,19 @@
        navigator.splashscreen.hide();
 
         app = new kendo.mobile.Application(document.body, {
-            layout: "master-layout",
+            //layout: "master-layout",
             skin: "flat",
             transition: "slide",
             initial:"splash"
         });
+                  
 
+        
     }, false);
 
     window.st = "I a, global";
     window.app = app;
+    
+
 
 }());
