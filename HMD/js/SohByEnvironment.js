@@ -30,6 +30,20 @@
                     dataType: "json"
                 }
             },
+            requestStart: function() {
+                    console.log($(document).height()/2 +' height'); 
+                    $('#progressbarSOH').css('visibility', 'visible');
+                    $('#progressbarSOH').css('padding-top', $(document).height()/4 + "px");
+                    $('#progressbarSOH').css('padding-bottom', $(document).height()/3 + "px");
+                    $('#progressbarSOH').css('display','block');
+                    
+                    //kendo.ui.progress($("#progress"), true);                                                            
+                },
+            requestEnd: function() {
+                    console.log('progress should end');
+                    //kendo.ui.progress($("#progressbarSOH"), false);
+                    $('#progressbarSOH').css('display', 'none');
+                },
             change: function (e) {               
                  var location = window.location.toString();
                     selectedItemSN = location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));

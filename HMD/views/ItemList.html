@@ -1,6 +1,8 @@
 <div data-role="view" data-title="National Stock" data-show="Items.show" data-hide="Items.hide" data-reload="true" data-layout="NatinalStock-layout">
+     <div id="progressbaritemlist"><img src="css\image\ajax-loader.gif" alt="loading Image"></img> </div>
     <div class="header" id="header_desc">
-    </div>
+    </div>   
+
     <ul id="theul" data-role="listview" data-source="Items.data" data-pull-to-refresh="true" data-template="items-template">
     </ul>
 </div>
@@ -25,54 +27,3 @@
         <div></div>
     </a>
 </script>
-<!-- template -->
-<!--
-<script type="text/x-kendo-template" id="items-template">    
-      <section class="card">
-        <h1><strong><a href="views/ItemDetail.html">#: ItemCTSH  #</a></strong></h1>
-        <div class="inline">
-            <h2>SOH</h2>
-            <div class="result">             
-                #: Math.trunc(SOH) #
-            </div>
-        </div>
-        <div class="inline">
-            <h2>MOS</h2>
-            <div class="result">
-                #: Math.trunc(MOS) #
-            </div>
-        </div>
-        <div class="inline">
-            <h2>AMC</h2>
-            <div class="result">
-                #: Math.trunc(AMC) #
-            </div>
-        </div>
-        <div class="inline">
-            <h2>MIN</h2>
-            <div class="result">
-                #: Math.trunc(MIN) #
-            </div>
-        </div>
-        <div class="inline">
-            <h2>MAX</h2>
-            <div class="result">
-                #: Math.trunc(MAX) #
-            </div>
-        </div>
-        <div class="inline">
-            <h2></h2>
-            <div class="result">
-                <a class="mbutton" data-role="button" href="views/ItemDetail.html">more</a>
-            </div>
-        </div>
-    </section>
-</script>
--->
-<!--
-<script type="text/x-kendo-template" id="items-template-empty">
-    <section class="card">
-        <h1><strong>No Items Available under this Program</strong></h1>        
-    </section>
-</script>
--->
