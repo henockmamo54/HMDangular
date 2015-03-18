@@ -367,11 +367,10 @@ green 49A145--
     font-size: 1.875em;
 }
 
-    .km-arrow-e:after,
-    .km-arrow-e:before
-    {
-        content: "\e204";
-    }
+ .red_background{
+     background:#CE3C3E;
+     color: white;
+ }   
 
 
 <!----- Icons ---->
@@ -387,3 +386,4 @@ green 49A145--
     {
         content: "\e04b";
     }
+<!----- Icons ---->

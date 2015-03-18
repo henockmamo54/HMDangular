@@ -126,7 +126,7 @@ and this isnt documented anywhere :( -->
      
     </ul>
    
-    
+      <ul id="theul4" style="display:block; clear:both;" data-role="listview" data-source="ItemIntransit.data" data-pull-to-refresh="true" data-template="ItemIntransit-template"> </ul> 
     
     <!--<ul id="theul3" style="width:45%; float:left; display:grid" data-role="listview" data-source="ItemExpiry.data" data-pull-to-refresh="true" data-template="itemexpiry-template">
     
@@ -242,7 +242,7 @@ and this isnt documented anywhere :( -->
                legend.append('text')
               .attr('x', legendRectSize + legendSpacing)
               .attr('y', legendRectSize - legendSpacing)
-              .text(function(d) { return d.toUpperCase(); });
+              .text(function(d) { return d });
 });
 
 
@@ -257,6 +257,9 @@ and this isnt documented anywhere :( -->
     <ul id="theul4" style="display:block; clear:both;" data-role="listview" data-source="ItemManufacturer.data" data-pull-to-refresh="true" data-template="ItemManufacturer-template">
      
     </ul> 
+    
+   
+   
      
    
   
@@ -333,6 +336,19 @@ and this isnt documented anywhere :( -->
                <div class="medium_text"> In Transit: #: accounting.formatNumber(Git) # </div>
              </div>
       
+    </script> 
+
+ <script type="text/x-kendo-template" id="ItemIntransit-template">      
+        <a href="views/IntransitDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode # & #: ItemCTSH #">
+            <div class="row1">
+            <div class="col1">  
+                <div> <b> In Transit </b> </div>
+             </div>             
+               <div class="medium_text">  Recent RI: #: getRelativeDateFromNow( MostRecentDate) # </div>
+               <div class="medium_text"> Total: #: accounting.formatNumber(TotalQuantity) # </div>
+             </div>    
+            
+        </a>
     </script> 
 
     

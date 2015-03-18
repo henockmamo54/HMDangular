@@ -51,7 +51,8 @@
                     ItemManufacturer.data.read();
                     ItemIssue.data.read();
                     ItemExpiry.data.read();
-                     ItemGit.data.read();
+                    ItemGit.data.read();
+                    ItemIntransit.data.read();
                 },
                 back: function () {
                     app.navigate("#:back");
