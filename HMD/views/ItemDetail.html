@@ -188,10 +188,10 @@ and this isnt documented anywhere :( -->
 
           d3.json(urlItemExpiry, function(error, dataset) {  // NEW
             dataset.Data.forEach(function(d) {                    // NEW
-              datasetconv.push({label:"<3 months",value: +d.LessThan3});
-              datasetconv.push({label:"<6 months",value: +d.LessThan6});
-              datasetconv.push({label:"<12 months",value: +d.LessThan12});
-              datasetconv.push({label:">12 months",value: +d.Greaterthan12});
+              datasetconv.push({label:"<3 Months",value: +d.LessThan3});
+              datasetconv.push({label:"<6 Months",value: +d.LessThan6});
+              datasetconv.push({label:"<12 Months",value: +d.LessThan12});
+              datasetconv.push({label:">12 Months",value: +d.Greaterthan12});
               datasetconv.push({label:"Expired",value: +d.Expired});                            // NEW
             });
 
@@ -266,7 +266,7 @@ and this isnt documented anywhere :( -->
         <a href="views/IssueDetail.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&EnvironmentCode=#: EnvironmentCode #& #: ItemCTSH # -  #: UnitSH # SOH: #:accounting.formatNumber(SOH) #">
             <div class="row1">
                 <div class="col1"> 
-                   <div><b> Issue </b>- <label class="medium_text"> <b>YTD: #: accounting.formatNumber(QuantityYTD) # </b></label> </div>
+                   <div><b> Issue -  YTD: #: accounting.formatNumber(QuantityYTD) # </b> </div>
                  </div>                   
             <div class="medium_text">  Last Issue: #: getRelativeDateFromNow( MostRecentDate) # </div> 
             <div class="medium_text">  Last Quantity: #: accounting.formatNumber(MostRecentQuantityIssued) #   </div> 
@@ -281,7 +281,7 @@ and this isnt documented anywhere :( -->
             <div class="row1">
                
                 <div class="col1">
-                    <div><b> Receipt </b>-<label class="medium_text "> <b> YTD: #: accounting.formatNumber(QuantityYTD) # </b> </label></div>
+                    <div><b> Receipt - YTD: #: accounting.formatNumber(QuantityYTD) # </b> </div>
                 </div>
             <div class="medium_text">  Last Receive: #: getRelativeDateFromNow( MostRecentDate) # </div> 
             <div class="medium_text">  Last Quantity: #: accounting.formatNumber(MostRecentQuantityReceived)# </div>
