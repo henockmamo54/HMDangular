@@ -29,6 +29,20 @@
                     dataType: "json"
                 }
             },
+            requestStart: function() {
+                    console.log($(document).height()/2 +' height'); 
+                    $('#progressbaritemlist').css('visibility', 'visible');
+                    $('#progressbaritemlist').css('padding-top', $(document).height()/4 + "px");
+                    $('#progressbaritemlist').css('padding-bottom', $(document).height()/3 + "px");
+                    $('#progressbaritemlist').css('display','block');
+                    
+                    //kendo.ui.progress($("#progress"), true);                                                            
+                },
+            requestEnd: function() {
+                    console.log('progress should end');
+                    //kendo.ui.progress($("#progress"), false);
+                    $('#progressbaritemlist').css('display', 'none');
+                },
             change: function (e) {    
                 
                 //Pull the ProgramID from the query string
@@ -50,7 +64,8 @@
             }           
         }),
                
-            show: function (){                  
+            show: function (){    
+                $('#progressbaritemlist').css('display', 'none');
               Items.data.read();
                 $("tab1").attr("href","test");
                 },

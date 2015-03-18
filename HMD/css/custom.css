@@ -10,15 +10,32 @@
 
 * { font-family: 'Roboto', sans-serif; line-height:1.2; vertical-align:middle; }
 
+ #progressbarSOH{
+     text-align: center;
+  margin-top: 0;  
+  text-align: center;
+    background:rgba(255,255,255,0.5);
+  color: ghostwhite;
+  display:block;
+}
 
+ #progressbaritemlist{
+     text-align: center;
+  margin-top: 0;  
+  text-align: center;
+    background:rgba(255,255,255,0.5);
+  color: ghostwhite;
+  display:block;
+}
 
 #progressbar
 {      
   text-align: center;
   margin-top: 0;  
   text-align: center;
-background:rgba(255,255,255,0.5);
+    background:rgba(255,255,255,0.5);
   color: ghostwhite;
+  display:block;
 }
 
 #splashimage{

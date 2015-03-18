@@ -54,7 +54,8 @@
     <!-- layout files move to another file in the future -->
     <div data-role="layout" data-id="master-layout">
         <div data-role="header">
-            <div data-role="navbar" class="blueBackground">
+            <div data-role="navbar" class="">
+                 <img id="corp-logo" src="css/image/Icon_48_48.png" data-align="left" style="width:35px;height:35px;margin-top:.1em"/>                  
                 <span data-role="view-title" ></span>
             </div>
         </div>
@@ -127,7 +128,7 @@
         </div>
          </div>
     </div>
-    <!-- Drawer Navigation  -->
+    <!-- Drawer Navigation 
     <div data-role="drawer" id="app-drawer">
         <div data-role="header">
             <div data-role="navbar">
@@ -140,17 +141,14 @@
                 <li><a href="#index" data-icon="home">test</a>
             </li>
         </ul>
-    </div>
+    </div> -->
     <!-- views  -->  
     
     <div data-role="view" id="index" data-title="Programs">     
         <div id="progressbar"><img src="css\image\ajax-loader.gif" alt="Splash Image"></img> </div>
         <ul id="theul" data-role="listview" data-source="Programs.data" data-pull-to-refresh="true" data-template="categories-template">
         </ul>
-    </div> 
- 
- 
-   
+    </div>      
     <div data-role="view" id="splash" style="background-image: url('css/image/Splash.png');">
         <div style="display:block; margin-bottom:15%;"></div>
         <img id="splashimage" src="css\image\Splash.png" alt="Splash Image" style="width:100%; padding-bottom:20%; height:auto; max-width:100%;"></img>               
@@ -192,19 +190,7 @@
                              
                              $('#splash').addClass('magictime vanishOut');   //console.log($('#splash'));
                              myfunc(); 
-                         }, 5000);
-                                  
-         //myfunc();        
-       /* 
-        var loc = window.location;
-        (function(){
-              var location = window.location;
-              var x  = location.substring(0, location.lastIndexOf('#'));
-              setTimeout(function(){$('#splash').addClass('magictime puffOut'); anim();}, 5000);
-              console.log('pls');
-             })();
-        
-            */              
+                         }, 5000);                                               
     </script>
 
 </body>
