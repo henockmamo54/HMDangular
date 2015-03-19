@@ -27,13 +27,15 @@
             change: function (e) {               
                 var data = this.data();                
                 var parentWidth = $(document).width();        
-               
+                localStorage.setItem("SelectedType","Program");
+                // console.log(localStorage.getItem("SelectedType")+"===> yes");
             },
             schema: {
                 data: "Data"
             }           
         }),
         back: function () {
+            localStorage.setItem("SelectedType","Program");
             app.navigate("#:back");
         },
         settings: function () {},        

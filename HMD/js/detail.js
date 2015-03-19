@@ -15,6 +15,7 @@
                 
                  read: {
                     url: function(){ console.log("on read method");
+                                    
                                     var location = window.location.toString();
                                     var test=location.substring(location.lastIndexOf('?'), location.indexOf("&"));
                                     var Soh="views/ItemList.html"+test+"&OrderBy=SOH+Desc&"+location.substring(location.lastIndexOf('&')+1, location.length);
@@ -23,8 +24,12 @@
                                     $("#tab1").attr("href",MOS);
                                      $("#tab2").attr("href",Soh);
                                      $("#tab3").attr("href",SS);
-                                    console.log("on read method   ==> "+location );
-                        return "http://webapi.dashboard.hcmisonline.org:80/api/IPVI_WebApi/ItemUnitListByProgram"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))},
+                                    //console.log("on read method   ==> "+location );
+                                    if(localStorage.getItem("SelectedType")=="Program"){
+                                        return "http://webapi.dashboard.hcmisonline.org:80/api/IPVI_WebApi/ItemUnitListByProgram"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))}
+                                    else if(localStorage.getItem("SelectedType")=="CommodityType"){
+                                        return "http://webapi.dashboard.hcmisonline.org/api/CT_WebApi/CTSS_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))}
+                                   },
                     type: "get",
                     dataType: "json"
                 }
@@ -56,7 +61,8 @@
                     document.getElementById("header_desc").innerHTML = selectedProgramDesc +" Items";    
                    var data = this.data();                
                   var parentWidth = $(document).width();   
-               
+                   
+                    
                        
             },
             schema: {

@@ -18,6 +18,7 @@
                 var data = this.data();                
                 var parentWidth = $(document).width();   
                 //console.log(data[0].ProgramID);
+                 localStorage.setItem("SelectedType","CommodityType");
                                
             },
             schema: {
