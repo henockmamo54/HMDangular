@@ -49,6 +49,7 @@
     <script src="js/IssueDetailInstitutionType.js"></script>
     <script src="js/IssueDetailInstitution.js"></script>
     <script src="js/IssueDetailOwnershipType.js"></script>
+    <script src="js/CommodityLIst.js"></script>
 </head>
 
 <body>
@@ -148,6 +149,15 @@
     <div data-role="view" id="index" data-title="Programs">     
         <div id="progressbar"><img src="css\image\ajax-loader.gif" alt="Splash Image"></img> </div>
         <ul id="theul" data-role="listview" data-source="Programs.data" data-pull-to-refresh="true" data-template="categories-template">
+        </ul>
+
+        <ul data-role="listview">
+          <li> 
+              <a href="views/CommodityLIst.html">
+                      <div  class="ART" >U </div>
+                      <div class="Unclassified_program">Unclassifed</div> 
+              </a>
+            </li>
         </ul>
     </div>      
     <div data-role="view" id="splash" style="background-image: url('css/image/Splash.png');">
