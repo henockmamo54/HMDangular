@@ -40,7 +40,8 @@
                 data: "Data"
             }           
         }),
-                show: function (){                    
+                show: function (){      
+                    IntransitDetail.data.read();
                 },
                 back: function () {
                     app.navigate("#:back");
