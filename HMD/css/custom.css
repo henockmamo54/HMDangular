@@ -454,4 +454,7 @@ display: inline-block;
         content: "\e04b";
     }
  .km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
+    .km-Back-buttonIcon:before, .km-Back-buttonIcon:after  { content: "\e013"; }
+    .km-Forward-buttonIcon:before, .km-Forward-buttonIcon:after  { content: "\e010"; }
+
 

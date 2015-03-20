@@ -27,7 +27,7 @@
                                             pageUrl= "http://webapi.dashboard.hcmisonline.org/api/CT_WebApi/CTSS_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
                                         }
                                     
-                                    return pageUrl+SelectedGroup;    
+                                    return pageUrl+SelectedGroup+"&Page=1&PageSize=35";    
                                     
                                    },
                     type: "get",
