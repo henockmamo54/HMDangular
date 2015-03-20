@@ -11,10 +11,10 @@
    
    <script type="text/x-kendo-template" id="IntransitDetail-template">
           
-       <div class="row1 # if(getRelativeDateFromNow(MostRecentDate).replace(" months ago",'') >4){# red_background #}# ">
+       <div class="row1 ">
                 
                 <div class="col1">
-                    <div class="medium_text_nocolor" >  #: getRelativeDateFromNow(MostRecentDate) # </div>
+                    <div class="# if(getRelativeDateFromNow(MostRecentDate).replace(" months ago",'') >4){# Intransit_red #}# " >  #: getRelativeDateFromNow(MostRecentDate) # </div>
                 </div>
                 <div></div>
                  <div class="medium_text_nocolor" >    #: SupplierSH #</div> 

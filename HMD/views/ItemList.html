@@ -10,11 +10,11 @@
 <!-- filter datasource from previous -->
 <!-- how to pass multpile parameters -->
 <script type="text/x-kendo-template" id="items-template">
-    <a href="views/SohByEnvironment.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN #&ProgramID=#: ProgramID #& #: ItemCTSH # -  #: UnitSH # SOH: #:accounting.formatNumber(SOH) #" class="#= SS #">
+    <a href="views/SohByEnvironment.html?ItemSN=#: ItemSN #&UnitSN=#: UnitSN ##if(localStorage.getItem('SelectedType')=='Program'){#&ProgramID=#: ProgramID ##}#& #: ItemCTSH # -  #: Unit # SOH: #:accounting.formatNumber(SOH) #" class="#= SS #">
         <span class="sstatus">#: SS.substr(0,1) #</span>
         <div class="row1">
             <div class="col1">
-                <div><b>#: ItemCTSH # - #:UnitSH#</b></div>
+                <div><b>#: ItemCTSH # - #:Unit#</b></div>
             </div>
             <div class="medium_text" style="width:60%;text-align:left;display:inline">
                 MOS: #: accounting.formatNumber(MOS,1,",") # AMC: #: accounting.formatNumber(AMC,0,",") #

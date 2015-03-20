@@ -1,0 +1,32 @@
+<div data-role="view" data-title="Commodity Type" data-show="Commodity.show" data-hide="Commodity.hide" data-reload="true"  data-layout="Commodity-layout">
+ 
+      <ul id="theul" data-role="listview" data-source="Commodity.data" data-pull-to-refresh="true" data-template="Commodity-template">
+       
+    </ul>
+    
+   
+     <script type="text/x-kendo-template" id="Commodity-template">
+           <a href="views/ItemList.html?CommodityTypeCode=#: CommodityTypeCode #& #: CommodityType #" >      
+                
+            <div class="row1">
+            <div class="col1"></div>
+                 <div class="CommodityType_Category"> #: CommodityType  # </div>
+                 <div  class="CommodityType_NumberOfItems" >#: accounting.formatNumber(NumberOfItems)  #  </div>
+            </div>
+            </a>
+         
+    </script>
+    
+</div>
+
+
+ <div data-role="layout" data-id="Commodity-layout">
+        <div data-role="header">
+            <div data-role="navbar">
+                
+                <a data-click="Programs.back" data-role="button" data-align="left">Back</a>
+                <span data-role="view-title"></span>
+            </div>
+        </div>
+        <div data-role="footer"></div>
+    </div>
