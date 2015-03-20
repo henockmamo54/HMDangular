@@ -22,8 +22,8 @@
                                      $("#tab2").attr("href",Soh);
                                      $("#tab3").attr("href",SS);
                                     //console.log("on read method   ==> "+location );
-                                       if(localStorage.getItem("SelectedGroup")==null){
-                                            localStorage.setItem("SelectedGroup","&ItemCTSH=A,B,C" );                                       
+                                       if(SelectedGroup==null){
+                                            SelectedGroup="&ItemCTSH=A,B,C" ;                                       
                                             pageUrl= "http://webapi.dashboard.hcmisonline.org/api/CT_WebApi/CTSS_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
                                         }
                                     
@@ -78,20 +78,20 @@
                 },
             back: function () {
                     app.navigate("#");                    
-                    localStorage.setItem("SelectedGroup",null);
+                    SelectedGroup=null;
                 },
              LetterGroupSelected : function( PSelectedGroup){
                 
                  switch(PSelectedGroup){
-                          case 1:  localStorage.setItem("SelectedGroup","&ItemCTSH=A,B,C"); break;
-                          case 2:  localStorage.setItem("SelectedGroup","&ItemCTSH=D,E,F"); break;
-                          case 3:  localStorage.setItem("SelectedGroup","&ItemCTSH=G,H,I"); break;
-                          case 4:  localStorage.setItem("SelectedGroup","&ItemCTSH=J,K,L"); break;
-                          case 5:  localStorage.setItem("SelectedGroup","&ItemCTSH=M,N,O"); break;
-                          case 6:  localStorage.setItem("SelectedGroup","&ItemCTSH=P,Q,R"); break;
-                          case 7:  localStorage.setItem("SelectedGroup","&ItemCTSH=S,T,U"); break;
-                          case 8:  localStorage.setItem("SelectedGroup","&ItemCTSH=V,W,X,Y,Z"); break;
-                          case 9:  localStorage.setItem("SelectedGroup","&ItemCTSH=A,B,C"); break;
+                          case 1:  SelectedGroup="&ItemCTSH=A,B,C"; break;
+                          case 2:  SelectedGroup="&ItemCTSH=D,E,F"; break;
+                          case 3:  SelectedGroup="&ItemCTSH=G,H,I"; break;
+                          case 4:  SelectedGroup="&ItemCTSH=J,K,L"; break;
+                          case 5:  SelectedGroup="&ItemCTSH=M,N,O"; break;
+                          case 6:  SelectedGroup="&ItemCTSH=P,Q,R"; break;
+                          case 7:  SelectedGroup="&ItemCTSH=S,T,U"; break;
+                          case 8:  SelectedGroup="&ItemCTSH=V,W,X,Y,Z"; break;
+                          case 9:  SelectedGroup="&ItemCTSH=A,B,C"; break;
                  }
                  ItemsUnclassified.data.read();
              },
