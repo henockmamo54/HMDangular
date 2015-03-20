@@ -9,7 +9,7 @@
                 read: {
                     //url: "http://webapi.dashboard.hcmisonline.org:80/api/OID_WebApi/OIDLL_ByIU?ItemSN=2448&UnitSN=50064",
                       url: function(){ 
-                     return "http://webapi.dashboard.hcmisonline.org/api/OID_WebApi/OIDLL_ByIUI"+localStorage.getItem("IssueFilter")+"&OrderBy=TransactionDate+DESC";
+                     return localStorage.getItem("urlIssueDetailInstitution");
                      },
                     type: "get",
                     dataType: "json"
