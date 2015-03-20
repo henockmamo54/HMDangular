@@ -19,6 +19,7 @@
                 var parentWidth = $(document).width();   
                 //console.log(data[0].ProgramID);
                  localStorage.setItem("SelectedType","CommodityType");
+                 localStorage.setItem("SelectedGroup",null);
                                
             },
             schema: {

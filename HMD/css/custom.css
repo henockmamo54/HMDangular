@@ -453,5 +453,5 @@ display: inline-block;
     {
         content: "\e04b";
     }
-
+ .km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
 
