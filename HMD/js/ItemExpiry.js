@@ -11,7 +11,7 @@
                     //url: "http://webapi.dashboard.hcmisonline.org:80/api/SS_WebApi/ByIU_QuantityPivotedByMonthFakeData",
                     url: function(){ console.log("Expiry read ");
                                     var location = window.location.toString();
-                     urlItemExpiry = "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/ByIU_QuantityOnlyPivotedByMonth"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                     urlItemExpiry = "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/ExpiryPivotedByMonth"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
                      localStorage.setItem("itemExpiry",urlItemExpiry);                                    
                      return urlItemExpiry;
                      },

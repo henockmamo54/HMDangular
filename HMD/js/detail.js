@@ -26,9 +26,9 @@
                                      $("#tab3").attr("href",SS);
                                     //console.log("on read method   ==> "+location );
                                     if(localStorage.getItem("SelectedType")=="Program"){
-                                        return "http://webapi.dashboard.hcmisonline.org:80/api/IPVI_WebApi/ItemUnitListByProgram"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))}
+                                        return "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/ItemUnitListByProgram"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))}
                                     else if(localStorage.getItem("SelectedType")=="CommodityType"){
-                                        return "http://webapi.dashboard.hcmisonline.org/api/CT_WebApi/CTSS_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))}
+                                        return "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/ItemUnitListByProgram"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))}
                                    },
                     type: "get",
                     dataType: "json"

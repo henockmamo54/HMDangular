@@ -75,7 +75,7 @@ and this isnt documented anywhere :( -->
         (function()
          {
         var location = window.location.toString(); 
-        var urlPipeLine = "http://webapi.dashboard.hcmisonline.org/api/RIDRCD_WebApi/RIDRCDPOD_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+        var urlPipeLine = "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/Pipeline"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
         var datasetconv = [ ];
         var w = $(document).width()/2;
         var chart = new D3Funnel("#funnel");
@@ -147,7 +147,7 @@ and this isnt documented anywhere :( -->
         var radius = Math.min(width, height) / 2;
         var donutWidth =35;
         var location = window.location.toString();
-        var urlItemExpiry = "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/ByIU_QuantityOnlyPivotedByMonth"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+        var urlItemExpiry = "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/ExpiryPivotedByMonth"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
         console.log(urlItemExpiry);  
         var legendRectSize = 8;
         var legendSpacing = 3;

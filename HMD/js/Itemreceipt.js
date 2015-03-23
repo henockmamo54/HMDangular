@@ -10,7 +10,7 @@
                     //url: "http://webapi.dashboard.hcmisonline.org:80/api/RCD_WebApi/ByIU?ItemSN=2191&UnitSN=50133",
                     url: function(){ console.log("receipt read rrrread");
                                     var location = window.location.toString();
-                     return "http://webapi.dashboard.hcmisonline.org/api/RCD_WebApi/RCD_ByIUMostRecent"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                     return "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/ReceiptSummary"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
                      },
                     type: "get",
                     dataType: "json"

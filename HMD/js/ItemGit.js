@@ -11,7 +11,7 @@
                     //url: "http://webapi.dashboard.hcmisonline.org:80/api/RCD_WebApi/ByIU?ItemSN=2191&UnitSN=50133",
                      url: function(){ console.log("receipt read rrrread");
                                     var location = window.location.toString();
-                       urlPipeLine = "http://webapi.dashboard.hcmisonline.org/api/RIDRCD_WebApi/RIDRCDPOD_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
+                       urlPipeLine = "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/Pipeline"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
                       console.log(urlPipeLine);                                    
                      return urlPipeLine;
                      },

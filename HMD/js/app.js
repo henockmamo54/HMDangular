@@ -6,7 +6,7 @@
             offlineStorage: "program-list",
             transport: {
                 read: {
-                    url: "http://webapi.dashboard.hcmisonline.org/api/PR_WebApi/Get?OrderBy=ProgramName",
+                    url: "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/Programs?OrderBy=ProgramName",
                     type: "get",
                     dataType: "json"
                 }

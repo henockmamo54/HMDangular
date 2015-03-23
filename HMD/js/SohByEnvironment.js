@@ -16,12 +16,12 @@
                          var filter=itemctsh.substring(itemctsh.lastIndexOf('?'), itemctsh.lastIndexOf('&'))
                          var program=itemctsh.substring(itemctsh.lastIndexOf('&')+1 , itemctsh.length);
                          if(program=="ProgramID=10"){
-                             urlSOHByEnviroment = "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentCode=CNPH,DUVH,MKVH,JMVH,NKVH,BDVH,DSVH,HWVH,DDVH,ASVH,CHVH,AFVH,GMVH,SOVH,BOVH,HAVH," +"&OrderBy=SOH+Desc";
+                             urlSOHByEnviroment = "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/StockStatusByHub"+filter+"&EnvironmentCode=CNPH,DUVH,MKVH,JMVH,NKVH,BDVH,DSVH,HWVH,DDVH,ASVH,CHVH,AFVH,GMVH,SOVH,BOVH,HAVH," +"&OrderBy=SOH+Desc";
                              localStorage.setItem("urlSOH",urlSOHByEnviroment);
                              return urlSOHByEnviroment; 
                          }
                          
-                         urlSOHByHub = "http://webapi.dashboard.hcmisonline.org/api/SS_WebApi/EStockStatusStandardOnly"+filter+"&EnvironmentGroupCode=hub" +"&OrderBy=SOH+Desc";
+                         urlSOHByHub = "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/StockStatusByHub"+filter+"&EnvironmentGroupCode=hub" +"&OrderBy=SOH+Desc";
                          localStorage.setItem("urlSOH",urlSOHByHub);
                          return urlSOHByHub;
                      },
