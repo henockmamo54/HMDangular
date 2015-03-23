@@ -13,7 +13,7 @@
                                       selectedItemSN = location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'));
                                      // var substring2=selectedItemSN.substring(selectedItemSN.lastIndexOf('?'), selectedItemSN.indexOf('&',selectedItemSN.indexOf('&')+1))
                
-                                      return "http://webapi.dashboard.hcmisonline.org:80/api/RCD_WebApi/CMaCountOnly"+selectedItemSN;
+                                      return "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/ItemManufacturerSummary"+selectedItemSN;
                       },
                     type: "get",
                     dataType: "json"

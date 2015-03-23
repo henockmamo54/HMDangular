@@ -10,7 +10,7 @@
                     //url: "http://webapi.dashboard.hcmisonline.org/api/RCD_WebApi/MaAmountOnly?ItemSN=2388&UnitSN=50003",
                     url: function(){ 
                                     var location = window.location.toString();
-                     return "http://webapi.dashboard.hcmisonline.org/api/RCD_WebApi/MaAmountOnly"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))+"&OrderBy=Amount+Desc";
+                     return "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/ItemManufacturerList"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))+"&OrderBy=Amount+Desc";
                      },
                     type: "get",
                     dataType: "json"

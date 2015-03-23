@@ -11,7 +11,7 @@
                       url: function(){ console.log("issue detail read");
                                     var location = window.location.toString();
                                      
-                     return "http://webapi.dashboard.hcmisonline.org:80/api/OID_WebApi/OIDLL_ByIU"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))+"&OrderBy=TransactionDate+DESC";
+                     return "http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/MostRecentIssue"+location.substring(location.lastIndexOf('?'), location.lastIndexOf('&'))+"&OrderBy=TransactionDate+DESC";
                      },
                     type: "get",
                     dataType: "json"
@@ -46,10 +46,10 @@
                    //localStorage.setItem("IssueFilter",location.substring(location.lastIndexOf('?'), location.lastIndexOf('&')));
                     
                 localStorage.setItem("selecttedItemUnit",selecttedItemUnit);
-                localStorage.setItem("urlIssueDetailRegion","http://webapi.dashboard.hcmisonline.org/api/OID_WebApi/OIDLL_ByIUR"+IssueFilter+"&OrderBy=TransactionDate+DESC");
-                localStorage.setItem("urlIssueDetailInstitution","http://webapi.dashboard.hcmisonline.org/api/OID_WebApi/OIDLL_ByIUI"+IssueFilter+"&OrderBy=TransactionDate+DESC");                    
-                localStorage.setItem("urlIssueDetailInstitutionType","http://webapi.dashboard.hcmisonline.org/api/OID_WebApi/OIDLL_ByIUIT"+IssueFilter+"&OrderBy=TransactionDate+DESC");
-                localStorage.setItem("urlIssueDeatilMostRecent","http://webapi.dashboard.hcmisonline.org:80/api/OID_WebApi/OIDLL_ByIU"+IssueFilter+"&OrderBy=TransactionDate+DESC");    
+                localStorage.setItem("urlIssueDetailRegion","http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/IssueSummaryByRegion"+IssueFilter+"&OrderBy=TransactionDate+DESC");
+                localStorage.setItem("urlIssueDetailInstitution","http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/IssueSummaryByInstitution"+IssueFilter+"&OrderBy=TransactionDate+DESC");                    
+                localStorage.setItem("urlIssueDetailInstitutionType","http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/IssueSummaryByInstitutionType"+IssueFilter+"&OrderBy=TransactionDate+DESC");
+                localStorage.setItem("urlIssueDeatilMostRecent","http://webapi.dashboard.hcmisonline.org/api/HCMISMobile_WebApi/MostRecentIssue"+IssueFilter+"&OrderBy=TransactionDate+DESC");    
                 localStorage.setItem("urlIssueDetailOwnerShip","http://webapi.dashboard.hcmisonline.org/api/OID_WebApi/OIDLL_ByIUOT"+IssueFilter+"&OrderBy=TransactionDate+DESC");    
               
                 document.getElementById("header_desc_IssueDetail").innerHTML = selecttedItemUnit + "</br> "+SOH ;
